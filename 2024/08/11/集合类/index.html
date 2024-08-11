@@ -1,0 +1,705 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Hexo | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="application-name" content="Hexo"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Hexo"><meta property="og:url" content="http://jie-space.github.io/2024/08/11/%E9%9B%86%E5%90%88%E7%B1%BB/index.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="集合类Array(数组)和ArrayList(集合)关键区别 类型安全： Array：类型安全，数组中的所有元素必须是相同的类型。 ArrayList：非类型安全，可以包含任何类型的对象。   大小： Array：大小固定，必须在创建时指定。 ArrayList：大小动态调整，根据需要自动扩展。"><meta property="og:locale" content="en"><meta property="og:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta property="article:author" content="John Doe"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta name="description" content="集合类Array(数组)和ArrayList(集合)关键区别 类型安全： Array：类型安全，数组中的所有元素必须是相同的类型。 ArrayList：非类型安全，可以包含任何类型的对象。   大小： Array：大小固定，必须在创建时指定。 ArrayList：大小动态调整，根据需要自动扩展。"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://jie-space.github.io/2024/08/11/%E9%9B%86%E5%90%88%E7%B1%BB/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"Author: John Doe","link":"Link: ","source":"Source: Hexo","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.","copySuccess":"Copy success, copy and reprint please mark the address of this article"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Hexo',
+  title: 'Hexo',
+  postAI: '',
+  pageFillDescription: '集合类, Array(数组)和ArrayList(集合)关键区别, ArrayList, 1. 特性, 2. 常用方法, 3. 性能, 4. 现代替代方案, List, 1. 特性, 2. 常用方法, 3. 性能, 4. 比较与替代方案, DictionaryltTKey TValuegt, 1. 特性, 2. 常用方法, 3. 性能, 4. 比较与替代方案, 字典排序, 1. 按键排序, 2. 按值排序, 3. 按值降序排序, 4. 将排序后的结果转换回字典, 队列（QueueltTgt）, 1. 特性, 2. 常用方法, 3. 性能, 4. 比较与替代方案, 栈（StackltTgt）, 1. 特性, 2. 常用方法, 3. 性能, 4. 比较与替代方案, 双向链表(LinkedList), 1. 特性, 2. 常用方法, 3. 性能, 4. 比较与替代方案, 其它, 1。数组和集合概念以及它们的区别：, C中的集合（Collection）和数组（Array）是两种不同的数据结构它们之间有以下主要区别：, 2迭代器生成器（索引器）：, 3重要接口：, 4。集合和列表的对比：集合类数组和集合关键区别类型安全类型安全数组中的所有元素必须是相同的类型非类型安全可以包含任何类型的对象大小大小固定必须在创建时指定大小动态调整根据需要自动扩展性能性能较好直接操作内存性能较差因为它需要处理动态扩展和类型转换用途适用于需要固定大小和类型安全的场景适用于需要动态大小且类型不确定的场景但推荐使用代替特性动态大小能够自动调整大小它会在添加元素时动态扩展容量非类型安全可以存储任何类型的对象这可能会导致类型不安全的问题因为你需要在取出元素时进行类型转换对象存储存储的是类型的对象因此你可以存储不同类型的对象但需要在使用时进行强制类型转换它属于命名空间常用方法添加元素将元素添加到集合的末尾将指定的集合中的元素添加到的末尾在指定索引处插入元素在指定索引处插入指定集合中的元素移除元素移除第一个匹配的元素移除指定索引处的元素移除从指定索引开始的指定数量的元素清空整个集合查找和排序确定集合是否包含指定的元素返回指定元素在集合中的索引对集合进行排序反转集合中的元素访问和枚举通过索引访问集合中的元素返回一个用于遍历集合的枚举器性能容量管理会在容量不足时进行扩容默认情况下扩容策略是将容量增加到原来的两倍性能问题由于需要处理对象类型在性能上可能会逊色于泛型集合如此外频繁的扩容和类型转换也可能影响性能现代替代方案是中推荐的泛型集合类属于命名空间提供类型安全和更好的性能例如只能存储类型的元素避免了类型转换问题提供了与相似的方法如添加移除排序等但在类型安全和性能上优于添加元素插入元素移除元素遍历查找元素清空特性泛型是一个泛型类表示集合中元素的类型这使得类型安全不需要进行类型转换动态大小能够自动调整大小随着元素的添加或移除而动态扩展或收缩高效相比于非泛型集合如提供了更好的性能和类型安全是中提供的一个泛型集合类属于命名空间用于存储同一类型的对象集合常用方法添加元素将元素添加到集合的末尾将指定集合中的元素添加到的末尾插入元素在指定索引处插入元素在指定索引处插入指定集合中的元素移除元素移除第一个匹配的元素移除指定索引处的元素移除从指定索引开始的指定数量的元素清空整个集合查找和排序确定集合是否包含指定的元素返回指定元素在集合中的索引对集合进行排序反转集合中的元素查找第一个符合条件的元素查找所有符合条件的元素查找第一个符合条件的元素的索引查找最后一个符合条件的元素查找最后一个符合条件的元素的索引访问和枚举通过索引访问集合中的元素返回一个用于遍历集合的枚举器性能容量管理会在容量不足时自动扩展通常扩展策略是将容量增加到原来的两倍你可以通过设置属性来预设容量避免频繁扩容性能优势提供的类型安全和泛型支持使得在访问和操作集合时性能优于非泛型集合如内存使用和访问速度更高避免了类型转换和装箱拆箱操作比较与替代方案是非泛型集合存储类型的元素替代提供了类型安全和更好的性能是另一种泛型集合适用于需要频繁插入和删除元素的场景而更适合需要随机访问和顺序操作的场景和这些集合适用于特定的数据结构需求如先进先出或后进先出的数据处理创建并初始化添加元素插入元素移除元素查找元素排序和反转遍历特性键值对存储存储一组键值对其中是键的类型是值的类型键唯一每个键在字典中必须唯一如果尝试添加一个已经存在的键会抛出异常无序集合不保证键值对的顺序它内部使用哈希表来存储数据提供快速的查找性能泛型支持泛型提供类型安全的集合操作是中的一个泛型集合类属于命名空间常用方法添加和移除添加一个键值对到字典中如果键已存在会抛出异常移除指定键及其对应的值移除字典中的所有键值对访问元素通过键访问字典中的值如果键不存在会抛出异常尝试获取指定键的值返回一个布尔值表示是否成功查询操作检查字典是否包含指定的键检查字典是否包含指定的值获取字典中的键值对数量枚举和迭代获取一个包含字典所有键的集合获取所有键获取一个包含字典所有值的集合获取所有值返回一个用于遍历字典的枚举器不常用获取枚举器释放枚举器虽然在块内不一定需要显示调用但这样做有助于保持良好的习惯性能查找性能的查找操作具有平均时间复杂度适合需要高效查找的场景扩容会在容量不足时自动扩展通常使用哈希表的方式来提高性能内存使用由于使用哈希表实现字典的内存使用可能会比其他集合类略高但提供了更高效的查找操作比较与替代方案是一个非泛型集合用于存储键值对相比于不提供类型安全且在性能和灵活性方面较差是的泛型替代方案是按键排序的字典提供了键的排序视图适用于需要按顺序遍历的场景是线程安全的字典适用于多线程环境中的并发操作创建并初始化添加元素移除元素访问元素查询操作遍历字典获取键和值集合字典排序按键排序按值排序按值降序排序将排序后的结果转换回字典队列特性先进先出队列中的元素按照它们添加的顺序进行处理最早添加的元素最早被取出泛型是泛型集合表示队列中元素的类型这提供了类型安全和避免了类型转换的需要动态大小队列可以动态调整大小根据需要自动扩展元素值可重复是中的一个泛型集合类属于命名空间常用方法添加元素将元素添加到队列的末尾移除元素移除并返回队列的开头元素如果队列为空调用此方法会抛出异常尝试从队列中移除并返回开头元素如果队列为空返回访问元素返回队列的开头元素但不移除它如果队列为空调用此方法会抛出异常尝试返回队列的开头元素但不移除它如果队列为空返回查询操作检查队列是否包含指定的元素获取队列中的元素数量清空队列清空队列中的所有元素枚举和迭代返回一个用于遍历队列中元素的枚举器性能时间复杂度和操作的时间复杂度为这是由于队列内部通常使用循环缓冲区实现操作的时间复杂度也为操作的时间复杂度为因为需要遍历队列来查找元素空间复杂度空间复杂度取决于队列的大小动态调整大小以适应元素的添加和移除比较与替代方案提供了类似的先进先出的操作但支持更灵活的插入和删除操作适用于需要频繁插入和删除的场景如果在多线程环境中使用队列是线程安全的队列实现适用于并发场景与队列不同实现的是后进先出数据结构适用于不同的数据处理需求创建并初始化添加元素访问队列的开头元素不移除移除并返回开头元素尝试移除元素尝试获取队列的开头元素遍历队列清空队列栈特性后进先出栈中的元素按照它们添加的相反顺序进行处理最后添加的元素最早被取出泛型是泛型集合表示栈中元素的类型这提供了类型安全避免了类型转换的需要动态大小栈可以动态调整大小根据需要自动扩展是中提供的泛型集合类属于命名空间常用方法添加元素将元素推入栈顶移除元素移除并返回栈顶的元素如果栈为空调用此方法会抛出异常尝试从栈中移除并返回栈顶元素如果栈为空返回访问元素返回栈顶的元素但不移除它如果栈为空调用此方法会抛出异常尝试返回栈顶的元素但不移除它如果栈为空返回查询操作检查栈中是否包含指定的元素获取栈中的元素数量清空栈清空栈中的所有元素枚举和迭代返回一个用于遍历栈中元素的枚举器性能时间复杂度和操作的时间复杂度为因为栈通常使用数组或链表来实现操作的时间复杂度也为操作的时间复杂度为因为需要遍历栈来查找元素空间复杂度空间复杂度取决于栈的大小动态调整大小以适应元素的添加和移除比较与替代方案也支持栈的操作可以用和实现类似的后进先出功能更适合需要频繁插入和删除操作的场景如果在多线程环境中使用栈是线程安全的栈实现适用于并发场景与栈不同实现的是先进先出数据结构适用于不同的数据处理需求创建并初始化添加元素访问栈顶元素不移除移除并返回栈顶元素尝试移除元素尝试获取栈顶元素遍历栈清空栈双向链表特性双向链表是双向链表实现每个节点都有对前驱节点和后继节点的引用动态大小链表的大小可以动态调整根据需要自动扩展或收缩不支持随机访问与数组或列表不同链表不支持通过索引进行随机访问访问元素需要从头节点或尾节点开始遍历链表常用方法添加节点在链表的开头插入一个新节点在链表的末尾插入一个新节点在指定节点之前插入一个新节点在指定节点之后插入一个新节点移除节点移除链表中第一个具有指定值的节点移除链表中的第一个节点移除链表中的最后一个节点移除指定的节点访问节点获取链表的第一个节点获取链表的最后一个节点清空链表移除链表中的所有节点查询操作检查链表中是否包含具有指定值的节点枚举和迭代返回一个用于遍历链表中节点的枚举器性能时间复杂度和操作的时间复杂度为因为这些操作只涉及更新节点的引用和操作的时间复杂度为因为这些操作也只涉及更新节点的引用和操作的时间复杂度为因为需要遍历链表来查找元素访问特定位置的元素如通过节点引用需要时间因为链表不支持随机访问空间复杂度每个节点需要额外的空间来存储对前驱节点和后继节点的引用这会增加链表的内存开销比较与替代方案是基于数组的动态集合支持高效的随机访问适用于需要频繁访问和修改元素的场景与相比的插入和删除操作可能较慢但支持更快的索引访问和这些集合类提供了特定的操作先进先出和后进先出适用于需要这些操作的场景和的实现与不同但可以用来实现类似的功能和在多线程环境中使用队列或栈时这些线程安全的实现可以避免同步问题创建并初始化添加元素获取第一个和最后一个节点在指定节点之前和之后插入节点遍历链表移除节点尝试移除不存在的节点清空链表其它数组和集合概念以及它们的区别数组一般是相同数据类型数组元素类型可以不同的元素按一定顺序排列的集合数组在添加插入删除不方便说明数组不是链表数组是集合集合不一定是数组数组读取查询速度比集合快集合是线性表在插入添加删除数据时比较方便性能比数组会高数组存储的类型不限制集合存储的类型只能是引用类型中的集合和数组是两种不同的数据结构它们之间有以下主要区别定义方式不同集合是使用集合类定义的如或数组是使用类型和大小显式定义的大小不同数组的大小在创建后无法更改而集合的大小可以根据需要动态增长内存布局不同数组在内存中是连续的而集合通常不是性能不同访问数组元素通常比访问集合元素快因为集合元素访问时可能需要进行装箱和拆箱操作索引访问数组可以通过索引直接访问元素而集合则需要使用迭代器或者在及以上版本中使用循环数据类型不同数组可以存储基本数据类型值类型也可以存储引用类型而集合只能存储引用类型因为它们都继承自迭代器生成器索引器迭代器一个对象能循环靠的是对象拥有迭代器谁来创造生成迭代器生成器索引器来生成迭代器中生成器叫成索引器重要接口数组实现了个接口前个接口很重要接口控制克隆复制对象列表接口控制对象操作添加删除等可枚举对象的接口控制是对象的循环集合接口控制复制对象说明列表也是集合的一种集合和列表的对比在中和都是集合类但它们有一些主要的区别是一个有序集合可以通过索引访问元素元素可以重复是一个无序集合不能通过索引访问元素元素不可以重复哈希表数组列表都是集合数组不支持泛型数组元素数据类型可以相同也可不相同而列表支持泛型元素数据类型相同数组元素有序列表元素也有序集合中元素可以有序也可以无序中数组之间的区别',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-30 20:25:37',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">Hexo</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> Newest Comments</span></div><div class="aside-list"><span>loading...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">August 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">13</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">July 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">No title</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-08-11T11:51:46.842Z" title="Created 2024-08-11 19:51:46">2024-08-11</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-07-30T12:25:37.220Z" title="Updated 2024-07-30 20:25:37">2024-07-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://jie-space.github.io/2024/08/11/%E9%9B%86%E5%90%88%E7%B1%BB/"><header><h1 id="CrawlerTitle" itemprop="name headline">No title</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">John Doe</span><time itemprop="dateCreated datePublished" datetime="2024-08-11T11:51:46.842Z" title="Created 2024-08-11 19:51:46">2024-08-11</time><time itemprop="dateCreated datePublished" datetime="2024-07-30T12:25:37.220Z" title="Updated 2024-07-30 20:25:37">2024-07-30</time></header><h2 id="集合类"><a href="#集合类" class="headerlink" title="集合类"></a>集合类</h2><h4 id="Array-数组-和ArrayList-集合-关键区别"><a href="#Array-数组-和ArrayList-集合-关键区别" class="headerlink" title="Array(数组)和ArrayList(集合)关键区别"></a>Array(数组)和ArrayList(集合)关键区别</h4><ul>
+<li><strong>类型安全</strong>：<ul>
+<li><code>Array</code>：类型安全，数组中的所有元素必须是相同的类型。</li>
+<li><code>ArrayList</code>：非类型安全，可以包含任何类型的对象。</li>
+</ul>
+</li>
+<li><strong>大小</strong>：<ul>
+<li><code>Array</code>：大小固定，必须在创建时指定。</li>
+<li><code>ArrayList</code>：大小动态调整，根据需要自动扩展。</li>
+</ul>
+</li>
+<li><strong>性能</strong>：<ul>
+<li><code>Array</code>：性能较好，直接操作内存。</li>
+<li><code>ArrayList</code>：性能较差，因为它需要处理动态扩展和类型转换。</li>
+</ul>
+</li>
+<li><strong>用途</strong>：<ul>
+<li><code>Array</code>：适用于需要固定大小和类型安全的场景。</li>
+<li><code>ArrayList</code>：适用于需要动态大小且类型不确定的场景，但推荐使用 <code>List&lt;T&gt;</code> 代替 <code>ArrayList</code>。</li>
+</ul>
+</li>
+</ul>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><h3 id="1-特性"><a href="#1-特性" class="headerlink" title="1. 特性"></a>1. 特性</h3><ul>
+<li><strong>动态大小</strong>：<code>ArrayList</code> 能够自动调整大小。它会在添加元素时动态扩展容量。</li>
+<li><strong>非类型安全</strong>：<code>ArrayList</code> 可以存储任何类型的对象。这可能会导致类型不安全的问题，因为你需要在取出元素时进行类型转换。</li>
+<li><strong>对象存储</strong>：<code>ArrayList</code> 存储的是 <code>object</code> 类型的对象，因此你可以存储不同类型的对象，但需要在使用时进行强制类型转换。</li>
+<li>它属于 <code>System.Collections</code> 命名空间</li>
+</ul>
+<h3 id="2-常用方法"><a href="#2-常用方法" class="headerlink" title="2. 常用方法"></a>2. 常用方法</h3><ul>
+<li><strong>添加元素</strong>：<ul>
+<li><code>Add(object value)</code>：将元素添加到集合的末尾。</li>
+<li><code>AddRange(ICollection c)</code>：将指定的集合中的元素添加到 <code>ArrayList</code> 的末尾。</li>
+<li><code>Insert(int index, object value)</code>：在指定索引处插入元素。</li>
+<li><code>InsertRange(int index, ICollection c)</code>：在指定索引处插入指定集合中的元素。</li>
+</ul>
+</li>
+<li><strong>移除元素</strong>：<ul>
+<li><code>Remove(object obj)</code>：移除第一个匹配的元素。</li>
+<li><code>RemoveAt(int index)</code>：移除指定索引处的元素。</li>
+<li><code>RemoveRange(int index, int count)</code>：移除从指定索引开始的指定数量的元素。</li>
+<li><code>Clear()</code>：清空整个集合。</li>
+</ul>
+</li>
+<li><strong>查找和排序</strong>：<ul>
+<li><code>Contains(object obj)</code>：确定集合是否包含指定的元素。</li>
+<li><code>IndexOf(object obj)</code>：返回指定元素在集合中的索引。</li>
+<li><code>Sort()</code>：对集合进行排序。</li>
+<li><code>Reverse()</code>：反转集合中的元素。</li>
+</ul>
+</li>
+<li><strong>访问和枚举</strong>：<ul>
+<li><code>this[int index]</code>：通过索引访问集合中的元素。</li>
+<li><code>Enumerator</code>：返回一个用于遍历集合的枚举器。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-性能"><a href="#3-性能" class="headerlink" title="3. 性能"></a>3. 性能</h3><ul>
+<li><strong>容量管理</strong>：<code>ArrayList</code> 会在容量不足时进行扩容。默认情况下，扩容策略是将容量增加到原来的两倍。</li>
+<li><strong>性能问题</strong>：由于需要处理对象类型，<code>ArrayList</code> 在性能上可能会逊色于泛型集合（如 <code>List&lt;T&gt;</code>）。此外，频繁的扩容和类型转换也可能影响性能。</li>
+</ul>
+<h3 id="4-现代替代方案"><a href="#4-现代替代方案" class="headerlink" title="4. 现代替代方案"></a>4. 现代替代方案</h3><ul>
+<li>**<code>List&lt;T&gt;</code>**：是 .NET 中推荐的泛型集合类，属于 <code>System.Collections.Generic</code> 命名空间。<code>List&lt;T&gt;</code> 提供类型安全和更好的性能。<ul>
+<li>例如，<code>List&lt;int&gt;</code> 只能存储 <code>int</code> 类型的元素，避免了类型转换问题。</li>
+<li><code>List&lt;T&gt;</code> 提供了与 <code>ArrayList</code> 相似的方法，如添加、移除、排序等，但在类型安全和性能上优于 <code>ArrayList</code>。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">ArrayList arrayList = new ArrayList();</span><br><span class="line"></span><br><span class="line">        // 添加元素</span><br><span class="line">        arrayList.Add(1);</span><br><span class="line">        arrayList.Add(&quot;Hello&quot;);</span><br><span class="line">        arrayList.Add(3.14);</span><br><span class="line"></span><br><span class="line">        // 插入元素</span><br><span class="line">        arrayList.Insert(1, &quot;World&quot;);</span><br><span class="line"></span><br><span class="line">        // 移除元素</span><br><span class="line">        arrayList.Remove(3.14);</span><br><span class="line"></span><br><span class="line">        // 遍历 ArrayList</span><br><span class="line">        foreach (var item in arrayList)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(item);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        // 查找元素</span><br><span class="line">        int index = arrayList.IndexOf(&quot;World&quot;);</span><br><span class="line">        Console.WriteLine(&quot;Index of &#x27;World&#x27;: &quot; + index);</span><br><span class="line"></span><br><span class="line">        // 清空 ArrayList</span><br><span class="line">        arrayList.Clear();</span><br></pre></td></tr></table></figure>
+
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List<T></h2><h3 id="1-特性-1"><a href="#1-特性-1" class="headerlink" title="1. 特性"></a>1. 特性</h3><ul>
+<li><strong>泛型</strong>：<code>List&lt;T&gt;</code> 是一个泛型类，<code>T</code> 表示集合中元素的类型。这使得 <code>List&lt;T&gt;</code> 类型安全，不需要进行类型转换。</li>
+<li><strong>动态大小</strong>：<code>List&lt;T&gt;</code> 能够自动调整大小，随着元素的添加或移除而动态扩展或收缩。</li>
+<li><strong>高效</strong>：相比于非泛型集合（如 <code>ArrayList</code>），<code>List&lt;T&gt;</code> 提供了更好的性能和类型安全。</li>
+<li><code>List&lt;T&gt;</code> 是 .NET 中提供的一个泛型集合类，属于 <code>System.Collections.Generic</code> 命名空间。<code>List&lt;T&gt;</code> 用于存储同一类型的对象集合</li>
+</ul>
+<h3 id="2-常用方法-1"><a href="#2-常用方法-1" class="headerlink" title="2. 常用方法"></a>2. 常用方法</h3><ul>
+<li><strong>添加元素</strong>：<ul>
+<li><code>Add(T item)</code>：将元素添加到集合的末尾。</li>
+<li><code>AddRange(IEnumerable&lt;T&gt; collection)</code>：将指定集合中的元素添加到 <code>List&lt;T&gt;</code> 的末尾。</li>
+</ul>
+</li>
+<li><strong>插入元素</strong>：<ul>
+<li><code>Insert(int index, T item)</code>：在指定索引处插入元素。</li>
+<li><code>InsertRange(int index, IEnumerable&lt;T&gt; collection)</code>：在指定索引处插入指定集合中的元素。</li>
+</ul>
+</li>
+<li><strong>移除元素</strong>：<ul>
+<li><code>Remove(T item)</code>：移除第一个匹配的元素。</li>
+<li><code>RemoveAt(int index)</code>：移除指定索引处的元素。</li>
+<li><code>RemoveRange(int index, int count)</code>：移除从指定索引开始的指定数量的元素。</li>
+<li><code>Clear()</code>：清空整个集合。</li>
+</ul>
+</li>
+<li><strong>查找和排序</strong>：<ul>
+<li><code>Contains(T item)</code>：确定集合是否包含指定的元素。</li>
+<li><code>IndexOf(T item)</code>：返回指定元素在集合中的索引。</li>
+<li><code>Sort()</code>：对集合进行排序。</li>
+<li><code>Reverse()</code>：反转集合中的元素。</li>
+<li><code>Find(Predicate&lt;T&gt; match)</code>：查找第一个符合条件的元素。</li>
+<li><code>FindAll(Predicate&lt;T&gt; match)</code>：查找所有符合条件的元素。</li>
+<li><code>FindIndex(Predicate&lt;T&gt; match)</code>：查找第一个符合条件的元素的索引。</li>
+<li><code>FindLast(Predicate&lt;T&gt; match)</code>：查找最后一个符合条件的元素。</li>
+<li><code>FindLastIndex(Predicate&lt;T&gt; match)</code>：查找最后一个符合条件的元素的索引。</li>
+</ul>
+</li>
+<li><strong>访问和枚举</strong>：<ul>
+<li><code>this[int index]</code>：通过索引访问集合中的元素。</li>
+<li><code>Enumerator</code>：返回一个用于遍历集合的枚举器。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-性能-1"><a href="#3-性能-1" class="headerlink" title="3. 性能"></a>3. 性能</h3><ul>
+<li><strong>容量管理</strong>：<code>List&lt;T&gt;</code> 会在容量不足时自动扩展，通常扩展策略是将容量增加到原来的两倍。你可以通过设置 <code>Capacity</code> 属性来预设容量，避免频繁扩容。</li>
+<li><strong>性能优势</strong>：<code>List&lt;T&gt;</code> 提供的类型安全和泛型支持使得在访问和操作集合时性能优于非泛型集合（如 <code>ArrayList</code>）。内存使用和访问速度更高，避免了类型转换和装箱&#x2F;拆箱操作。</li>
+</ul>
+<h3 id="4-比较与替代方案"><a href="#4-比较与替代方案" class="headerlink" title="4. 比较与替代方案"></a>4. 比较与替代方案</h3><ul>
+<li>**<code>ArrayList</code>**：<code>ArrayList</code> 是非泛型集合，存储 <code>object</code> 类型的元素。<code>List&lt;T&gt;</code> 替代 <code>ArrayList</code> 提供了类型安全和更好的性能。</li>
+<li>**<code>LinkedList&lt;T&gt;</code>**：<code>LinkedList&lt;T&gt;</code> 是另一种泛型集合，适用于需要频繁插入和删除元素的场景，而 <code>List&lt;T&gt;</code> 更适合需要随机访问和顺序操作的场景。</li>
+<li>**<code>Queue&lt;T&gt;</code> 和 <code>Stack&lt;T&gt;</code>**：这些集合适用于特定的数据结构需求，如先进先出（FIFO）或后进先出（LIFO）的数据处理。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// 创建 List&lt;int&gt; 并初始化</span><br><span class="line">        List&lt;int&gt; numbers = new List&lt;int&gt; &#123; 1, 2, 3, 4, 5 &#125;;</span><br><span class="line"></span><br><span class="line">        // 添加元素</span><br><span class="line">        numbers.Add(6);</span><br><span class="line">        numbers.AddRange(new[] &#123; 7, 8 &#125;);</span><br><span class="line"></span><br><span class="line">        // 插入元素</span><br><span class="line">        numbers.Insert(2, 99);</span><br><span class="line"></span><br><span class="line">        // 移除元素</span><br><span class="line">        numbers.Remove(4);</span><br><span class="line">        numbers.RemoveAt(0);</span><br><span class="line"></span><br><span class="line">        // 查找元素</span><br><span class="line">        bool containsSeven = numbers.Contains(7);</span><br><span class="line">        int indexOf99 = numbers.IndexOf(99);</span><br><span class="line"></span><br><span class="line">        // 排序和反转</span><br><span class="line">        numbers.Sort();</span><br><span class="line">        numbers.Reverse();</span><br><span class="line"></span><br><span class="line">        // 遍历 List</span><br><span class="line">        foreach (int number in numbers)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(number);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary&lt;TKey, TValue&gt;"></a>Dictionary&lt;TKey, TValue&gt;</h2><h3 id="1-特性-2"><a href="#1-特性-2" class="headerlink" title="1. 特性"></a>1. 特性</h3><ul>
+<li><strong>键值对存储</strong>：<code>Dictionary&lt;TKey, TValue&gt;</code> 存储一组键值对，其中 <code>TKey</code> 是键的类型，<code>TValue</code> 是值的类型。</li>
+<li><strong>键唯一</strong>：每个键在字典中必须唯一。如果尝试添加一个已经存在的键，会抛出异常。</li>
+<li><strong>无序集合</strong>：<code>Dictionary&lt;TKey, TValue&gt;</code> 不保证键值对的顺序。它内部使用哈希表来存储数据，提供快速的查找性能。</li>
+<li><strong>泛型</strong>：支持泛型，提供类型安全的集合操作。</li>
+<li><code>Dictionary&lt;TKey, TValue&gt;</code> 是 .NET 中的一个泛型集合类，属于 <code>System.Collections.Generic</code> 命名空间。</li>
+</ul>
+<h3 id="2-常用方法-2"><a href="#2-常用方法-2" class="headerlink" title="2. 常用方法"></a>2. 常用方法</h3><ul>
+<li><p><strong>添加和移除</strong>：</p>
+<ul>
+<li><code>Add(TKey key, TValue value)</code>：添加一个键值对到字典中。如果键已存在，会抛出异常。</li>
+<li><code>Remove(TKey key)</code>：移除指定键及其对应的值。</li>
+<li><code>Clear()</code>：移除字典中的所有键值对。</li>
+</ul>
+</li>
+<li><p><strong>访问元素</strong>：</p>
+<ul>
+<li><code>this[TKey key]</code>：通过键访问字典中的值。如果键不存在，会抛出异常。</li>
+<li><code>TryGetValue(TKey key, out TValue value)</code>：尝试获取指定键的值，返回一个布尔值表示是否成功。</li>
+</ul>
+</li>
+<li><p><strong>查询操作</strong>：</p>
+<ul>
+<li><code>ContainsKey(TKey key)</code>：检查字典是否包含指定的键。</li>
+<li><code>ContainsValue(TValue value)</code>：检查字典是否包含指定的值。</li>
+<li><code>Count</code>：获取字典中的键值对数量。</li>
+</ul>
+</li>
+<li><p><strong>枚举和迭代</strong>：</p>
+<ul>
+<li><p><code>Keys</code>：获取一个包含字典所有键的集合。</p>
+<p><code>// 获取所有键 ICollection&lt;string&gt; keys = dictionary.Keys;</code></p>
+</li>
+<li><p><code>Values</code>：获取一个包含字典所有值的集合。</p>
+<p><code> // 获取所有值 ICollection&lt;int&gt; values = dictionary.Values;</code></p>
+</li>
+<li><p><code>Enumerator</code>：返回一个用于遍历字典的枚举器。(不常用)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 获取枚举器</span><br><span class="line">        var enumerator = dictionary.GetEnumerator();</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(&quot;Dictionary contents:&quot;);</span><br><span class="line">        while (enumerator.MoveNext())</span><br><span class="line">        &#123;</span><br><span class="line">            KeyValuePair&lt;string, int&gt; kvp = enumerator.Current;</span><br><span class="line">            Console.WriteLine($&quot;&#123;kvp.Key&#125;: &#123;kvp.Value&#125;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        // 释放枚举器（虽然在 using 块内不一定需要显示调用 Dispose，但这样做有助于保持良好的习惯）</span><br><span class="line">        enumerator.Dispose();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-性能-2"><a href="#3-性能-2" class="headerlink" title="3. 性能"></a>3. 性能</h3><ul>
+<li><strong>查找性能</strong>：<code>Dictionary&lt;TKey, TValue&gt;</code> 的查找操作具有 O(1) 平均时间复杂度，适合需要高效查找的场景。</li>
+<li><strong>扩容</strong>：<code>Dictionary&lt;TKey, TValue&gt;</code> 会在容量不足时自动扩展，通常使用哈希表的方式来提高性能。</li>
+<li><strong>内存使用</strong>：由于使用哈希表实现，字典的内存使用可能会比其他集合类略高，但提供了更高效的查找操作。</li>
+</ul>
+<h3 id="4-比较与替代方案-1"><a href="#4-比较与替代方案-1" class="headerlink" title="4. 比较与替代方案"></a>4. 比较与替代方案</h3><ul>
+<li>**<code>Hashtable</code>**：<code>Hashtable</code> 是一个非泛型集合，用于存储键值对。相比于 <code>Dictionary&lt;TKey, TValue&gt;</code>，<code>Hashtable</code> 不提供类型安全，且在性能和灵活性方面较差。<code>Dictionary&lt;TKey, TValue&gt;</code> 是 <code>Hashtable</code> 的泛型替代方案。</li>
+<li>**<code>SortedDictionary&lt;TKey, TValue&gt;</code>**：<code>SortedDictionary&lt;TKey, TValue&gt;</code> 是按键排序的字典，提供了键的排序视图，适用于需要按顺序遍历的场景。</li>
+<li>**<code>ConcurrentDictionary&lt;TKey, TValue&gt;</code>**：<code>ConcurrentDictionary&lt;TKey, TValue&gt;</code> 是线程安全的字典，适用于多线程环境中的并发操作。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">// 创建 Dictionary 并初始化</span><br><span class="line">       Dictionary&lt;string, int&gt; dictionary = new Dictionary&lt;string, int&gt;</span><br><span class="line">       &#123;</span><br><span class="line">           &#123; &quot;apple&quot;, 1 &#125;,</span><br><span class="line">           &#123; &quot;banana&quot;, 2 &#125;,</span><br><span class="line">           &#123; &quot;cherry&quot;, 3 &#125;</span><br><span class="line">       &#125;;</span><br><span class="line"></span><br><span class="line">       // 添加元素</span><br><span class="line">       dictionary.Add(&quot;date&quot;, 4);</span><br><span class="line"></span><br><span class="line">       // 移除元素</span><br><span class="line">       dictionary.Remove(&quot;banana&quot;);</span><br><span class="line"></span><br><span class="line">       // 访问元素</span><br><span class="line">       if (dictionary.TryGetValue(&quot;cherry&quot;, out int value))</span><br><span class="line">       &#123;</span><br><span class="line">           Console.WriteLine($&quot;Value for &#x27;cherry&#x27;: &#123;value&#125;&quot;);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       // 查询操作</span><br><span class="line">       bool containsApple = dictionary.ContainsKey(&quot;apple&quot;);</span><br><span class="line">       Console.WriteLine($&quot;Contains &#x27;apple&#x27;: &#123;containsApple&#125;&quot;);</span><br><span class="line"></span><br><span class="line">       // 遍历字典</span><br><span class="line">       foreach (var kvp in dictionary)</span><br><span class="line">       &#123;</span><br><span class="line">           Console.WriteLine($&quot;&#123;kvp.Key&#125;: &#123;kvp.Value&#125;&quot;);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       // 获取键和值集合</span><br><span class="line">       var keys = dictionary.Keys;</span><br><span class="line">       var values = dictionary.Values;</span><br><span class="line"></span><br><span class="line">       Console.WriteLine(&quot;Keys:&quot;);</span><br><span class="line">       foreach (var key in keys)</span><br><span class="line">       &#123;</span><br><span class="line">           Console.WriteLine(key);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       Console.WriteLine(&quot;Values:&quot;);</span><br><span class="line">       foreach (var val in values)</span><br><span class="line">       &#123;</span><br><span class="line">           Console.WriteLine(val);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="字典排序"><a href="#字典排序" class="headerlink" title="字典排序"></a>字典排序</h3><h5 id="1-按键排序"><a href="#1-按键排序" class="headerlink" title="1. 按键排序"></a>1. 按键排序</h5><p><code>var sortedByKey = dictionary.OrderBy(kvp =&gt; kvp.Key);</code></p>
+<h5 id="2-按值排序"><a href="#2-按值排序" class="headerlink" title="2. 按值排序"></a>2. 按值排序</h5><p><code>var sortedByValue = dictionary.OrderBy(kvp =&gt; kvp.Value);</code></p>
+<h5 id="3-按值降序排序"><a href="#3-按值降序排序" class="headerlink" title="3. 按值降序排序"></a>3. 按值降序排序</h5><p><code>var sortedByValueDescending = dictionary.OrderByDescending(kvp =&gt; kvp.Value);</code></p>
+<h5 id="4-将排序后的结果转换回字典"><a href="#4-将排序后的结果转换回字典" class="headerlink" title="4. 将排序后的结果转换回字典"></a>4. 将排序后的结果转换回字典</h5><p><code>var sortedDictionary = dictionary.OrderBy(kvp =&gt; kvp.Value).ToDictionary(kvp =&gt; kvp.Key, kvp =&gt; kvp.Value);</code></p>
+<h2 id="队列（Queue）"><a href="#队列（Queue）" class="headerlink" title="队列（Queue&lt;T&gt;）"></a>队列（<code>Queue&lt;T&gt;</code>）</h2><h3 id="1-特性-3"><a href="#1-特性-3" class="headerlink" title="1. 特性"></a>1. 特性</h3><ul>
+<li><p><strong>先进先出</strong>：队列中的元素按照它们添加的顺序进行处理。最早添加的元素最早被取出。</p>
+</li>
+<li><p><strong>泛型</strong>：<code>Queue&lt;T&gt;</code> 是泛型集合，<code>T</code> 表示队列中元素的类型。这提供了类型安全和避免了类型转换的需要。</p>
+</li>
+<li><p><strong>动态大小</strong>：队列可以动态调整大小，根据需要自动扩展。</p>
+</li>
+<li><p>元素值可重复。</p>
+</li>
+<li><p><code>Queue&lt;T&gt;</code> 是 .NET 中的一个泛型集合类，属于 <code>System.Collections.Generic</code> 命名空间。</p>
+</li>
+</ul>
+<h3 id="2-常用方法-3"><a href="#2-常用方法-3" class="headerlink" title="2. 常用方法"></a>2. 常用方法</h3><ul>
+<li><strong>添加元素</strong>：<ul>
+<li><code>Enqueue(T item)</code>：将元素添加到队列的末尾。</li>
+</ul>
+</li>
+<li><strong>移除元素</strong>：<ul>
+<li><code>Dequeue()</code>：移除并返回队列的开头元素。如果队列为空，调用此方法会抛出异常。</li>
+<li><code>TryDequeue(out T result)</code>：尝试从队列中移除并返回开头元素。如果队列为空，返回 <code>false</code>。</li>
+</ul>
+</li>
+<li><strong>访问元素</strong>：<ul>
+<li><code>Peek()</code>：返回队列的开头元素，但不移除它。如果队列为空，调用此方法会抛出异常。</li>
+<li><code>TryPeek(out T result)</code>：尝试返回队列的开头元素，但不移除它。如果队列为空，返回 <code>false</code>。</li>
+</ul>
+</li>
+<li><strong>查询操作</strong>：<ul>
+<li><code>Contains(T item)</code>：检查队列是否包含指定的元素。</li>
+<li><code>Count</code>：获取队列中的元素数量。</li>
+</ul>
+</li>
+<li><strong>清空队列</strong>：<ul>
+<li><code>Clear()</code>：清空队列中的所有元素。</li>
+</ul>
+</li>
+<li><strong>枚举和迭代</strong>：<ul>
+<li><code>Enumerator</code>：返回一个用于遍历队列中元素的枚举器。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-性能-3"><a href="#3-性能-3" class="headerlink" title="3. 性能"></a>3. 性能</h3><ul>
+<li><strong>时间复杂度</strong>：<ul>
+<li><code>Enqueue</code> 和 <code>Dequeue</code> 操作的时间复杂度为 O(1)，这是由于队列内部通常使用循环缓冲区实现。</li>
+<li><code>Peek</code> 操作的时间复杂度也为 O(1)。</li>
+<li><code>Contains</code> 操作的时间复杂度为 O(n)，因为需要遍历队列来查找元素。</li>
+</ul>
+</li>
+<li><strong>空间复杂度</strong>：空间复杂度取决于队列的大小。<code>Queue&lt;T&gt;</code> 动态调整大小，以适应元素的添加和移除。</li>
+</ul>
+<h3 id="4-比较与替代方案-2"><a href="#4-比较与替代方案-2" class="headerlink" title="4. 比较与替代方案"></a>4. 比较与替代方案</h3><ul>
+<li>**<code>LinkedList&lt;T&gt;</code>**：<code>LinkedList&lt;T&gt;</code> 提供了类似的先进先出的操作，但支持更灵活的插入和删除操作。适用于需要频繁插入和删除的场景。</li>
+<li>**<code>ConcurrentQueue&lt;T&gt;</code>**：如果在多线程环境中使用队列，<code>ConcurrentQueue&lt;T&gt;</code> 是线程安全的队列实现，适用于并发场景。</li>
+<li>**<code>Stack&lt;T&gt;</code>**：与队列不同，<code>Stack&lt;T&gt;</code> 实现的是后进先出（LIFO, Last-In-First-Out）数据结构，适用于不同的数据处理需求。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">// 创建 Queue 并初始化</span><br><span class="line">        Queue&lt;string&gt; queue = new Queue&lt;string&gt;();</span><br><span class="line">        </span><br><span class="line">        // 添加元素</span><br><span class="line">        queue.Enqueue(&quot;first&quot;);</span><br><span class="line">        queue.Enqueue(&quot;second&quot;);</span><br><span class="line">        queue.Enqueue(&quot;third&quot;);</span><br><span class="line"></span><br><span class="line">        // 访问队列的开头元素（不移除）</span><br><span class="line">        string front = queue.Peek();</span><br><span class="line">        Console.WriteLine($&quot;Front of the queue: &#123;front&#125;&quot;);</span><br><span class="line"></span><br><span class="line">        // 移除并返回开头元素</span><br><span class="line">        string removed = queue.Dequeue();</span><br><span class="line">        Console.WriteLine($&quot;Removed: &#123;removed&#125;&quot;);</span><br><span class="line"></span><br><span class="line">        // 尝试移除元素</span><br><span class="line">        if (queue.TryDequeue(out string result))</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine($&quot;Successfully dequeued: &#123;result&#125;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 尝试获取队列的开头元素</span><br><span class="line">        if (queue.TryPeek(out string peekResult))</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine($&quot;Peeked: &#123;peekResult&#125;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 遍历队列</span><br><span class="line">        Console.WriteLine(&quot;Queue contents:&quot;);</span><br><span class="line">        foreach (var item in queue)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(item);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 清空队列</span><br><span class="line">        queue.Clear();</span><br><span class="line">        Console.WriteLine($&quot;Queue count after clearing: &#123;queue.Count&#125;&quot;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="栈（Stack）"><a href="#栈（Stack）" class="headerlink" title="栈（Stack&lt;T&gt;）"></a>栈（<code>Stack&lt;T&gt;</code>）</h2><h3 id="1-特性-4"><a href="#1-特性-4" class="headerlink" title="1. 特性"></a>1. 特性</h3><ul>
+<li><strong>后进先出</strong>：栈中的元素按照它们添加的相反顺序进行处理。最后添加的元素最早被取出。</li>
+<li><strong>泛型</strong>：<code>Stack&lt;T&gt;</code> 是泛型集合，<code>T</code> 表示栈中元素的类型。这提供了类型安全，避免了类型转换的需要。</li>
+<li><strong>动态大小</strong>：栈可以动态调整大小，根据需要自动扩展。</li>
+<li><code>Stack&lt;T&gt;</code> 是 .NET 中提供的泛型集合类，属于 <code>System.Collections.Generic</code> 命名空间。</li>
+</ul>
+<h3 id="2-常用方法-4"><a href="#2-常用方法-4" class="headerlink" title="2. 常用方法"></a>2. 常用方法</h3><ul>
+<li><strong>添加元素</strong>：<ul>
+<li><code>Push(T item)</code>：将元素推入栈顶。</li>
+</ul>
+</li>
+<li><strong>移除元素</strong>：<ul>
+<li><code>Pop()</code>：移除并返回栈顶的元素。如果栈为空，调用此方法会抛出异常。</li>
+<li><code>TryPop(out T result)</code>：尝试从栈中移除并返回栈顶元素。如果栈为空，返回 <code>false</code>。</li>
+</ul>
+</li>
+<li><strong>访问元素</strong>：<ul>
+<li><code>Peek()</code>：返回栈顶的元素，但不移除它。如果栈为空，调用此方法会抛出异常。</li>
+<li><code>TryPeek(out T result)</code>：尝试返回栈顶的元素，但不移除它。如果栈为空，返回 <code>false</code>。</li>
+</ul>
+</li>
+<li><strong>查询操作</strong>：<ul>
+<li><code>Contains(T item)</code>：检查栈中是否包含指定的元素。</li>
+<li><code>Count</code>：获取栈中的元素数量。</li>
+</ul>
+</li>
+<li><strong>清空栈</strong>：<ul>
+<li><code>Clear()</code>：清空栈中的所有元素。</li>
+</ul>
+</li>
+<li><strong>枚举和迭代</strong>：<ul>
+<li><code>Enumerator</code>：返回一个用于遍历栈中元素的枚举器。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-性能-4"><a href="#3-性能-4" class="headerlink" title="3. 性能"></a>3. 性能</h3><ul>
+<li><strong>时间复杂度</strong>：<ul>
+<li><code>Push</code> 和 <code>Pop</code> 操作的时间复杂度为 O(1)，因为栈通常使用数组或链表来实现。</li>
+<li><code>Peek</code> 操作的时间复杂度也为 O(1)。</li>
+<li><code>Contains</code> 操作的时间复杂度为 O(n)，因为需要遍历栈来查找元素。</li>
+</ul>
+</li>
+<li><strong>空间复杂度</strong>：空间复杂度取决于栈的大小。<code>Stack&lt;T&gt;</code> 动态调整大小，以适应元素的添加和移除。</li>
+</ul>
+<h3 id="4-比较与替代方案-3"><a href="#4-比较与替代方案-3" class="headerlink" title="4. 比较与替代方案"></a>4. 比较与替代方案</h3><ul>
+<li>**<code>LinkedList&lt;T&gt;</code>**：<code>LinkedList&lt;T&gt;</code> 也支持栈的操作，可以用 <code>AddLast</code> 和 <code>RemoveLast</code> 实现类似的后进先出功能。<code>LinkedList&lt;T&gt;</code> 更适合需要频繁插入和删除操作的场景。</li>
+<li>**<code>ConcurrentStack&lt;T&gt;</code>**：如果在多线程环境中使用栈，<code>ConcurrentStack&lt;T&gt;</code> 是线程安全的栈实现，适用于并发场景。</li>
+<li>**<code>Queue&lt;T&gt;</code>**：与栈不同，<code>Queue&lt;T&gt;</code> 实现的是先进先出（FIFO, First-In-First-Out）数据结构，适用于不同的数据处理需求。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">// 创建 Stack 并初始化</span><br><span class="line">        Stack&lt;string&gt; stack = new Stack&lt;string&gt;();</span><br><span class="line">        </span><br><span class="line">        // 添加元素</span><br><span class="line">        stack.Push(&quot;first&quot;);</span><br><span class="line">        stack.Push(&quot;second&quot;);</span><br><span class="line">        stack.Push(&quot;third&quot;);</span><br><span class="line"></span><br><span class="line">        // 访问栈顶元素（不移除）</span><br><span class="line">        string top = stack.Peek();</span><br><span class="line">        Console.WriteLine($&quot;Top of the stack: &#123;top&#125;&quot;);</span><br><span class="line"></span><br><span class="line">        // 移除并返回栈顶元素</span><br><span class="line">        string removed = stack.Pop();</span><br><span class="line">        Console.WriteLine($&quot;Removed: &#123;removed&#125;&quot;);</span><br><span class="line"></span><br><span class="line">        // 尝试移除元素</span><br><span class="line">        if (stack.TryPop(out string result))</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine($&quot;Successfully popped: &#123;result&#125;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 尝试获取栈顶元素</span><br><span class="line">        if (stack.TryPeek(out string peekResult))</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine($&quot;Peeked: &#123;peekResult&#125;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 遍历栈</span><br><span class="line">        Console.WriteLine(&quot;Stack contents:&quot;);</span><br><span class="line">        foreach (var item in stack)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(item);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 清空栈</span><br><span class="line">        stack.Clear();</span><br><span class="line">        Console.WriteLine($&quot;Stack count after clearing: &#123;stack.Count&#125;&quot;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="双向链表-LinkedList"><a href="#双向链表-LinkedList" class="headerlink" title="双向链表(LinkedList)"></a>双向链表(LinkedList<T>)</h2><h3 id="1-特性-5"><a href="#1-特性-5" class="headerlink" title="1. 特性"></a>1. 特性</h3><ul>
+<li><strong>双向链表</strong>：<code>LinkedList&lt;T&gt;</code> 是双向链表实现，每个节点都有对前驱节点和后继节点的引用。</li>
+<li><strong>动态大小</strong>：链表的大小可以动态调整，根据需要自动扩展或收缩。</li>
+<li><strong>不支持随机访问</strong>：与数组或列表不同，链表不支持通过索引进行随机访问。访问元素需要从头节点或尾节点开始遍历链表。</li>
+</ul>
+<h3 id="2-常用方法-5"><a href="#2-常用方法-5" class="headerlink" title="2. 常用方法"></a>2. 常用方法</h3><ul>
+<li><strong>添加节点</strong>：<ul>
+<li><code>AddFirst(T value)</code>：在链表的开头插入一个新节点。</li>
+<li><code>AddLast(T value)</code>：在链表的末尾插入一个新节点。</li>
+<li><code>AddBefore(LinkedListNode&lt;T&gt; node, T value)</code>：在指定节点之前插入一个新节点。</li>
+<li><code>AddAfter(LinkedListNode&lt;T&gt; node, T value)</code>：在指定节点之后插入一个新节点。</li>
+</ul>
+</li>
+<li><strong>移除节点</strong>：<ul>
+<li><code>Remove(T value)</code>：移除链表中第一个具有指定值的节点。</li>
+<li><code>RemoveFirst()</code>：移除链表中的第一个节点。</li>
+<li><code>RemoveLast()</code>：移除链表中的最后一个节点。</li>
+<li><code>Remove(LinkedListNode&lt;T&gt; node)</code>：移除指定的节点。</li>
+</ul>
+</li>
+<li><strong>访问节点</strong>：<ul>
+<li><code>First</code>：获取链表的第一个节点。</li>
+<li><code>Last</code>：获取链表的最后一个节点。</li>
+</ul>
+</li>
+<li><strong>清空链表</strong>：<ul>
+<li><code>Clear()</code>：移除链表中的所有节点。</li>
+</ul>
+</li>
+<li><strong>查询操作</strong>：<ul>
+<li><code>Contains(T value)</code>：检查链表中是否包含具有指定值的节点。</li>
+</ul>
+</li>
+<li><strong>枚举和迭代</strong>：<ul>
+<li><code>Enumerator</code>：返回一个用于遍历链表中节点的枚举器。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-性能-5"><a href="#3-性能-5" class="headerlink" title="3. 性能"></a>3. 性能</h3><ul>
+<li><strong>时间复杂度</strong>：<ul>
+<li><code>AddFirst</code> 和 <code>AddLast</code> 操作的时间复杂度为 O(1)，因为这些操作只涉及更新节点的引用。</li>
+<li><code>RemoveFirst</code> 和 <code>RemoveLast</code> 操作的时间复杂度为 O(1)，因为这些操作也只涉及更新节点的引用。</li>
+<li><code>Remove</code> 和 <code>Contains</code> 操作的时间复杂度为 O(n)，因为需要遍历链表来查找元素。</li>
+<li>访问特定位置的元素（如通过节点引用）需要 O(n) 时间，因为链表不支持随机访问。</li>
+</ul>
+</li>
+<li><strong>空间复杂度</strong>：每个节点需要额外的空间来存储对前驱节点和后继节点的引用，这会增加链表的内存开销。</li>
+</ul>
+<h3 id="4-比较与替代方案-4"><a href="#4-比较与替代方案-4" class="headerlink" title="4. 比较与替代方案"></a>4. 比较与替代方案</h3><ul>
+<li>**<code>List&lt;T&gt;</code>**：<code>List&lt;T&gt;</code> 是基于数组的动态集合，支持高效的随机访问。适用于需要频繁访问和修改元素的场景。与 <code>LinkedList&lt;T&gt;</code> 相比，<code>List&lt;T&gt;</code> 的插入和删除操作可能较慢（O(n)），但支持更快的索引访问。</li>
+<li><strong><code>Queue&lt;T&gt;</code></strong> 和 **<code>Stack&lt;T&gt;</code>**：这些集合类提供了特定的操作（先进先出和后进先出），适用于需要这些操作的场景。<code>Queue&lt;T&gt;</code> 和 <code>Stack&lt;T&gt;</code> 的实现与 <code>LinkedList&lt;T&gt;</code> 不同，但可以用来实现类似的功能。</li>
+<li><strong><code>ConcurrentQueue&lt;T&gt;</code></strong> 和 **<code>ConcurrentStack&lt;T&gt;</code>**：在多线程环境中使用队列或栈时，这些线程安全的实现可以避免同步问题。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">// 创建 LinkedList 并初始化</span><br><span class="line">        LinkedList&lt;string&gt; linkedList = new LinkedList&lt;string&gt;();</span><br><span class="line"></span><br><span class="line">        // 添加元素</span><br><span class="line">        linkedList.AddFirst(&quot;first&quot;);</span><br><span class="line">        linkedList.AddLast(&quot;second&quot;);</span><br><span class="line">        linkedList.AddLast(&quot;third&quot;);</span><br><span class="line"></span><br><span class="line">        // 获取第一个和最后一个节点</span><br><span class="line">        LinkedListNode&lt;string&gt; firstNode = linkedList.First;</span><br><span class="line">        LinkedListNode&lt;string&gt; lastNode = linkedList.Last;</span><br><span class="line"></span><br><span class="line">        Console.WriteLine($&quot;First node: &#123;firstNode.Value&#125;&quot;);</span><br><span class="line">        Console.WriteLine($&quot;Last node: &#123;lastNode.Value&#125;&quot;);</span><br><span class="line"></span><br><span class="line">        // 在指定节点之前和之后插入节点</span><br><span class="line">        linkedList.AddBefore(lastNode, &quot;new node before last&quot;);</span><br><span class="line">        linkedList.AddAfter(firstNode, &quot;new node after first&quot;);</span><br><span class="line"></span><br><span class="line">        // 遍历链表</span><br><span class="line">        Console.WriteLine(&quot;LinkedList contents:&quot;);</span><br><span class="line">        foreach (var node in linkedList)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(node);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 移除节点</span><br><span class="line">        linkedList.Remove(&quot;new node before last&quot;);</span><br><span class="line">        linkedList.RemoveFirst();</span><br><span class="line">        linkedList.RemoveLast();</span><br><span class="line"></span><br><span class="line">        // 尝试移除不存在的节点</span><br><span class="line">        bool removed = linkedList.Remove(&quot;nonexistent&quot;);</span><br><span class="line">        Console.WriteLine($&quot;Attempted to remove nonexistent node: &#123;removed&#125;&quot;);</span><br><span class="line"></span><br><span class="line">        // 清空链表</span><br><span class="line">        linkedList.Clear();</span><br><span class="line">        Console.WriteLine($&quot;LinkedList count after clearing: &#123;linkedList.Count&#125;&quot;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h4 id="1。数组和集合概念，以及它们的区别："><a href="#1。数组和集合概念，以及它们的区别：" class="headerlink" title="1。数组和集合概念，以及它们的区别："></a>1。数组和集合概念，以及它们的区别：</h4><p>数组【一般是相同数据类型】（object[]数组元素类型可以不同）的元素按一定顺序排列的集合。</p>
+<p>数组在添加，插入，删除不方便。说明数组不是链表。</p>
+<p>数组是集合，集合不一定是数组。Collection<br>数组读取（查询）速度比集合快。集合是线性表，在插入，添加，删除数据时比较方便，性能比数组会高。<br>数组存储的类型不限制。集合存储的类型只能是引用类型。</p>
+<h4 id="C-中的集合（Collection）和数组（Array）是两种不同的数据结构，它们之间有以下主要区别："><a href="#C-中的集合（Collection）和数组（Array）是两种不同的数据结构，它们之间有以下主要区别：" class="headerlink" title="C#中的集合（Collection）和数组（Array）是两种不同的数据结构，它们之间有以下主要区别："></a>C#中的集合（Collection）和数组（Array）是两种不同的数据结构，它们之间有以下主要区别：</h4><p>1。定义方式不同：集合是使用集合类定义的，如List或HashSet。数组是使用类型和大小显式定义的。<br>2。大小不同：数组的大小在创建后无法更改，而集合的大小可以根据需要动态增长。<br>3。内存布局不同：数组在内存中是连续的，而集合通常不是。<br>4。性能不同：访问数组元素通常比访问集合元素快，因为集合元素访问时可能需要进行装箱和拆箱操作。<br>5。索引访问：数组可以通过索引直接访问元素，而集合则需要使用迭代器或者在.NET 2.0及以上版本中使用foreach循环。<br>6。数据类型不同：数组可以存储基本数据类型（值类型），也可以存储引用类型，【而集合只能存储引用类型】，因为它们都继承自System.Object。</p>
+<h4 id="2-迭代器，生成器（索引器）："><a href="#2-迭代器，生成器（索引器）：" class="headerlink" title="2,迭代器，生成器（索引器）："></a>2,迭代器，生成器（索引器）：</h4><p>迭代器：一个对象能循环，靠的是对象拥有迭代器。<br>谁来创造（生成）迭代器，生成器（索引器）来生成迭代器。<br>C#中生成器，叫成索引器</p>
+<h4 id="3-重要接口："><a href="#3-重要接口：" class="headerlink" title="3,重要接口："></a>3,重要接口：</h4><p>public abstract class Array : ICloneable, IList, ICollection, IEnumerable, IStructuralComparable, IStructuralEquatable</p>
+<p>数组实现了6个接口，前4个接口很重要<br>ICloneable接口控制克隆，复制对象<br>IList列表接口，控制对象操作（添加，删除等）<br>IEnumerable可枚举对象的接口，控制是对象的循环<br>ICollection集合接口，控制复制对象</p>
+<p>public interface IList : ICollection, IEnumerable 说明列表也是集合的一种。<br>public class ArrayList : IList, ICollection, IEnumerable, ICloneable<br>public class List<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection, IReadOnlyList<T>, IReadOnlyCollection<T></p>
+<h4 id="4。集合和列表的对比："><a href="#4。集合和列表的对比：" class="headerlink" title="4。集合和列表的对比："></a>4。集合和列表的对比：</h4><p>在C#中，List<T>和HashSet<T>都是集合类，但它们有一些主要的区别：<br>List<T>是一个有序集合，可以通过索引访问元素。元素可以重复。<br>HashSet<T>是一个无序集合，不能通过索引访问元素。元素不可以重复。  哈希表</p>
+<p>数组，列表都是集合<br>数组不支持泛型，数组元素数据类型可以相同，也可不相同。而列表支持泛型，元素数据类型相同。<br>数组元素有序，列表元素也有序。<br>集合中元素可以有序，也可以无序。</p>
+<p>C#中数组,ArrayList,List之间的区别：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/574188306"></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/deathmr/p/5946239.html"></a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ylq1045/article/details/122366380"></a></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">John Doe</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://jie-space.github.io/2024/08/11/%E9%9B%86%E5%90%88%E7%B1%BB/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://jie-space.github.io/2024/08/11/%E9%9B%86%E5%90%88%E7%B1%BB/')">Hexo</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://jie-space.github.io/2024/08/11/%E9%9B%86%E5%90%88%E7%B1%BB/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Hexo&amp;url=http://jie-space.github.io/2024/08/11/%E9%9B%86%E5%90%88%E7%B1%BB/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/08/11/%E9%9B%86%E5%90%88%E5%A4%9A%E7%BA%BF%E7%A8%8B/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2024/08/11/%E7%BB%93%E6%9E%84%E5%92%8C%E7%B1%BB/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">哈哈哈哈哈哈</div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">集合类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Array-%E6%95%B0%E7%BB%84-%E5%92%8CArrayList-%E9%9B%86%E5%90%88-%E5%85%B3%E9%94%AE%E5%8C%BA%E5%88%AB"><span class="toc-number">1.0.1.</span> <span class="toc-text">Array(数组)和ArrayList(集合)关键区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList"><span class="toc-number">2.</span> <span class="toc-text">ArrayList</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%89%B9%E6%80%A7"><span class="toc-number">2.1.</span> <span class="toc-text">1. 特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">2. 常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%80%A7%E8%83%BD"><span class="toc-number">2.3.</span> <span class="toc-text">3. 性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%8E%B0%E4%BB%A3%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88"><span class="toc-number">2.4.</span> <span class="toc-text">4. 现代替代方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-number">3.</span> <span class="toc-text">List</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%89%B9%E6%80%A7-1"><span class="toc-number">3.1.</span> <span class="toc-text">1. 特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-1"><span class="toc-number">3.2.</span> <span class="toc-text">2. 常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%80%A7%E8%83%BD-1"><span class="toc-number">3.3.</span> <span class="toc-text">3. 性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%AF%94%E8%BE%83%E4%B8%8E%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88"><span class="toc-number">3.4.</span> <span class="toc-text">4. 比较与替代方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dictionary"><span class="toc-number">4.</span> <span class="toc-text">Dictionary&lt;TKey, TValue&gt;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%89%B9%E6%80%A7-2"><span class="toc-number">4.1.</span> <span class="toc-text">1. 特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-2"><span class="toc-number">4.2.</span> <span class="toc-text">2. 常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%80%A7%E8%83%BD-2"><span class="toc-number">4.3.</span> <span class="toc-text">3. 性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%AF%94%E8%BE%83%E4%B8%8E%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88-1"><span class="toc-number">4.4.</span> <span class="toc-text">4. 比较与替代方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E6%8E%92%E5%BA%8F"><span class="toc-number">4.5.</span> <span class="toc-text">字典排序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%8C%89%E9%94%AE%E6%8E%92%E5%BA%8F"><span class="toc-number">4.5.0.1.</span> <span class="toc-text">1. 按键排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%8C%89%E5%80%BC%E6%8E%92%E5%BA%8F"><span class="toc-number">4.5.0.2.</span> <span class="toc-text">2. 按值排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%8C%89%E5%80%BC%E9%99%8D%E5%BA%8F%E6%8E%92%E5%BA%8F"><span class="toc-number">4.5.0.3.</span> <span class="toc-text">3. 按值降序排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E5%B0%86%E6%8E%92%E5%BA%8F%E5%90%8E%E7%9A%84%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%E5%9B%9E%E5%AD%97%E5%85%B8"><span class="toc-number">4.5.0.4.</span> <span class="toc-text">4. 将排序后的结果转换回字典</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97%EF%BC%88Queue%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">队列（Queue&lt;T&gt;）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%89%B9%E6%80%A7-3"><span class="toc-number">5.1.</span> <span class="toc-text">1. 特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-3"><span class="toc-number">5.2.</span> <span class="toc-text">2. 常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%80%A7%E8%83%BD-3"><span class="toc-number">5.3.</span> <span class="toc-text">3. 性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%AF%94%E8%BE%83%E4%B8%8E%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88-2"><span class="toc-number">5.4.</span> <span class="toc-text">4. 比较与替代方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%EF%BC%88Stack%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">栈（Stack&lt;T&gt;）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%89%B9%E6%80%A7-4"><span class="toc-number">6.1.</span> <span class="toc-text">1. 特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-4"><span class="toc-number">6.2.</span> <span class="toc-text">2. 常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%80%A7%E8%83%BD-4"><span class="toc-number">6.3.</span> <span class="toc-text">3. 性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%AF%94%E8%BE%83%E4%B8%8E%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88-3"><span class="toc-number">6.4.</span> <span class="toc-text">4. 比较与替代方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8-LinkedList"><span class="toc-number">7.</span> <span class="toc-text">双向链表(LinkedList)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%89%B9%E6%80%A7-5"><span class="toc-number">7.1.</span> <span class="toc-text">1. 特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-5"><span class="toc-number">7.2.</span> <span class="toc-text">2. 常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%80%A7%E8%83%BD-5"><span class="toc-number">7.3.</span> <span class="toc-text">3. 性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%AF%94%E8%BE%83%E4%B8%8E%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88-4"><span class="toc-number">7.4.</span> <span class="toc-text">4. 比较与替代方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-number">8.</span> <span class="toc-text">其它</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%82%E6%95%B0%E7%BB%84%E5%92%8C%E9%9B%86%E5%90%88%E6%A6%82%E5%BF%B5%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%AE%83%E4%BB%AC%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-number">8.0.1.</span> <span class="toc-text">1。数组和集合概念，以及它们的区别：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-%E4%B8%AD%E7%9A%84%E9%9B%86%E5%90%88%EF%BC%88Collection%EF%BC%89%E5%92%8C%E6%95%B0%E7%BB%84%EF%BC%88Array%EF%BC%89%E6%98%AF%E4%B8%A4%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E5%AE%83%E4%BB%AC%E4%B9%8B%E9%97%B4%E6%9C%89%E4%BB%A5%E4%B8%8B%E4%B8%BB%E8%A6%81%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-number">8.0.2.</span> <span class="toc-text">C#中的集合（Collection）和数组（Array）是两种不同的数据结构，它们之间有以下主要区别：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%8C%E7%94%9F%E6%88%90%E5%99%A8%EF%BC%88%E7%B4%A2%E5%BC%95%E5%99%A8%EF%BC%89%EF%BC%9A"><span class="toc-number">8.0.3.</span> <span class="toc-text">2,迭代器，生成器（索引器）：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E9%87%8D%E8%A6%81%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="toc-number">8.0.4.</span> <span class="toc-text">3,重要接口：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%82%E9%9B%86%E5%90%88%E5%92%8C%E5%88%97%E8%A1%A8%E7%9A%84%E5%AF%B9%E6%AF%94%EF%BC%9A"><span class="toc-number">8.0.5.</span> <span class="toc-text">4。集合和列表的对比：</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C(IO)/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E7%89%B9%E6%80%A7/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E6%9E%9A%E4%B8%BE/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.854Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="John Doe" target="_blank">John Doe</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">Articles</div><div class="length-num">17</div></a><a href="/tags/" title="tag"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/" title="category"><div class="headline">Categories</div><div class="length-num">0</div></a></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="Display Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>Display Mode</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 John Doe 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

@@ -1,0 +1,705 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Hexo | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="application-name" content="Hexo"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Hexo"><meta property="og:url" content="http://jie-space.github.io/2024/08/11/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C(IO)/index.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="文件操作(I&amp;#x2F;O)Path类,File类Path 类(静态)Path 类提供了一系列静态方法，用于处理文件路径字符串。它并不直接操作文件，而是用于路径的格式化、解析和验证。 常用方法 Combine(string path1, string path2) ：将两个路径字符串合并成一个路径。"><meta property="og:locale" content="en"><meta property="og:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta property="article:author" content="John Doe"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta name="description" content="文件操作(I&amp;#x2F;O)Path类,File类Path 类(静态)Path 类提供了一系列静态方法，用于处理文件路径字符串。它并不直接操作文件，而是用于路径的格式化、解析和验证。 常用方法 Combine(string path1, string path2) ：将两个路径字符串合并成一个路径。"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://jie-space.github.io/2024/08/11/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C(IO)/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"Author: John Doe","link":"Link: ","source":"Source: Hexo","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.","copySuccess":"Copy success, copy and reprint please mark the address of this article"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Hexo',
+  title: 'Hexo',
+  postAI: '',
+  pageFillDescription: '文件操作(Ix2FO), Path类File类, Path 类(静态), 常用方法, File 类(静态), 主要功能, 常用方法, Directory(目录), 1. 特性, 2. 常用方法, 绝对路径和相对路径, FileStream类(读写), 1. 特性, 2. 常用构造函数, 3. 常用属性, 4. 常用方法, FileMode和FileAccess, 1. FileMode 枚举, 2. FileAccess 枚举, 3. 示例, 读取文件内容, 写入文件内容, 异步操作, FileInfo(对文件操作)和DirectoryInfo(对目录操作), FileInfo类, 1. 特性, 2. 常用属性, 3. 常用方法, 获取文件信息, 创建、复制和删除文件, DirectoryInfo类(对文件夹操作), 1. 常用属性, 2. 常用方法, 创建、检查和删除目录, 列出文件和子目录, StreamReader和StreamWriter(文本文件), 1. StreamReader 类, 特性, 常用构造函数, 常用方法, 2. StreamWriter 类, 特性, 常用构造函数, 常用方法, 性能和注意事项, 总结, 与FileStream的关系与使用, System.IO.DriveInfo盘符类, MemoryStream 内存流, 主要特性, 主要方法和属性, ms.Seek 方法, SeekOrigin 枚举, 4. StringReader文件操作类类类静态类提供了一系列静态方法用于处理文件路径字符串它并不直接操作文件而是用于路径的格式化解析和验证常用方法将两个路径字符串合并成一个路径获取指定路径的扩展名获取指定路径的文件名不包含路径获取指定路径的目录部分获取指定路径的绝对路径绝对路径更改指定路径的文件扩展名判断路径是否具有扩展名获取文件扩展名获得文件地址连接两个字符串作为路径类静态类提供了一系列静态方法用于创建删除复制移动和打开文件它直接操作文件系统中的文件封装了底层的文件操作功能主要功能文件创建创建新文件或覆盖现有文件文件删除删除指定的文件文件复制复制文件到新的位置文件移动移动文件到新的位置文件属性获取或设置文件的属性信息如大小创建时间等常用方法创建一个新的文件文件如果已存在则覆盖文件创建成功删除指定的文件复制文件到新位置移动文件到新位置判断文件是否存在读取文件的所有文本内容将文本内容写入文件读取文件的所有字节内容将字节数据写入文件创建一个文件删除一个文件复制一个文件写入文件今天是个好天气没有这个文件会给你创建一个有的话会覆盖掉张三李四王五读取文件按行读取返回的是字符串数组指定一个编码格式整个读取返回的是字符串指定一个编码格式将字节数组中每一个元素都按照指定的编码格式解码成字符串目录是中用于处理目录文件夹的静态类属于命名空间特性静态方法所有的方法都是静态的直接通过类名调用简化操作适用于执行简单的目录操作无需创建对象实例性能与类相比静态方法提供了一种简洁的方式来处理目录操作但不具备面向对象的特性常用方法创建指定路径的目录如果目录已存在则返回现有目录删除指定路径的目录可以选择是否递归删除目录及其内容检查指定路径的目录是否存在获取指定目录中的文件列表获取指定目录中的子目录列表获取指定目录中的文件和子目录列表将目录从一个位置移动到另一个位置绝对路径和相对路径绝对路径通过给定的这个路径能直接在电脑上找到文件相对路径文件相对于应用程序的路径结论我们在开发中应尽量使用相对路径类读写特性字节流访问处理的是原始字节流可以读取或写入任意类型的数据同步和异步支持同步和异步操作适用于不同的性能需求文件操作提供了直接对文件的流式读写操作比和更底层使用方法不是静态类需要实例化才能使用常用构造函数以指定的模式打开文件以指定的模式和访问权限打开文件以指定的模式访问权限和共享方式打开文件指定缓冲区大小来打开文件常用属性获取一个值指示当前是否支持读取获取一个值指示当前是否支持写入获取文件的长度以字节为单位获取或设置当前流的位置获取或设置读取操作的超时时间获取或设置写入操作的超时时间常用方法从流中读取字节数据到缓冲区将缓冲区的字节数据写入到流中移动流的位置到指定的偏移量刷新缓冲区将所有缓冲数据写入文件设置流的长度关闭并释放与文件关联的所有资源释放占用的所有资源通常通过语句自动调用和枚举枚举定义了在打开或创建文件时的行为它决定了文件如何被处理常用的值包括指定如果文件不存在则创建新文件如果文件存在则覆盖它此模式下会清空现有文件的内容指定如果文件不存在则创建新文件如果文件已经存在则引发指定打开现有文件文件必须存在否则引发指定如果文件存在则打开它如果文件不存在则创建新文件指定打开现有文件文件必须存在该文件的长度将被截断为零字节指定打开文件并将其内容追加到文件末尾如果文件不存在则创建新文件枚举枚举定义了对文件的访问权限它指定了你对文件的操作权限包括读取写入或两者皆有指定文件只能进行读取操作指定文件只能进行写入操作指定文件可以进行读取和写入操作示例读取文件内容以读取模式打开文件读取文件内容每次多大读出来的有效数量打印文件内容写入文件内容以写入模式打开文件写入内容到文件异步操作异步写入文件这是缓冲区大小以字节为单位这个布尔值指定了文件是否应异步打开将字符串转换为字节数组异步读取文件使用类读取数据每次读取的最大字节数返回每次实际读取到的有效字节数将字节数组中每一个元素按照指定的编码格式解码成字符串关闭流释放流占用的资源将创建文件流对象的过程写在中会自动帮我们释放流所占用的资源看会不会覆盖字节块从哪开始最多写入的字节数对文件操作和对目录操作类特性文件信息可以获取文件的各种属性如文件名路径创建时间修改时间等文件操作提供了创建删除复制移动等文件操作的功能对象导向与类静态方法相比类是面向对象的它允许你创建文件对象然后调用方法来执行操作常用属性获取文件的名称不包括路径获取文件的完整路径获取文件的扩展名包括获取一个对象表示文件所在的目录获取文件的大小以字节为单位获取文件的创建时间获取文件的上次访问时间获取文件的最后修改时间常用方法创建一个新的文件删除文件将文件复制到指定路径将文件移动到指定路径打开文件并返回一个对象用于读写操作以读取模式打开文件并返回一个对象以写入模式打开文件并返回一个对象获取文件信息创建复制和删除文件创建一个新的文件复制文件移动文件删除文件类对文件夹操作常用属性获取目录的名称不包括路径获取目录的完整路径获取一个对象表示当前目录的父目录获取一个对象表示目录的根目录如驱动器根目录获取一个值指示目录是否存在常用方法创建目录如果目录已存在则不执行操作删除目录可以选择是否递归删除目录及其内容获取当前目录中的文件可以选择筛选文件的搜索模式获取当前目录中的子目录可以选择筛选目录的搜索模式获取当前目录中的文件和子目录将目录移动到指定路径创建检查和删除目录创建目录检查目录是否存在移动目录删除目录递归列出文件和子目录列出目录中的文件列出目录中的子目录列出目录中的文件和子目录和文本文件类用于从流中读取字符通常是文本文件它封装了类如的读取操作支持读取文本文件中的字符数据特性字符流读取处理字符数据支持文本编码转换行读取可以逐行读取文本内容缓冲内部使用缓冲机制提高读取性能常用构造函数初始化类的新实例使用指定的流初始化类的新实例使用指定路径的文件流初始化类的新实例使用指定的流和编码常用方法读取下一个字符的整数表示形式从流中读取字符到缓冲区读取当前行的字符直到换行符或流的末尾读取流中的所有字符并将其作为字符串返回关闭实例并释放与流相关的资源类用于向流中写入字符数据通常是文本文件它封装了类如的写入操作支持将字符数据写入文件特性字符流写入处理字符数据支持文本编码转换行写入可以逐行写入文本内容缓冲内部使用缓冲机制提高写入性能常用构造函数初始化类的新实例使用指定的流初始化类的新实例使用指定路径的文件流初始化类的新实例使用指定的流和编码常用方法写入字符串数据到流写入字符串数据和一个行终止符到流清空缓冲区将所有缓冲的字符写入基础流关闭实例并释放与流相关的资源使用读取文件内容使用读取文件内容读取整个文件内容使用写入文件内容使用写入文件内容写入字符串内容和换行符使用和处理大文件使用读取文件内容逐行读取并写入新文件性能和注意事项缓冲和都使用内部缓冲区来提高性能通常不需要手动调整缓冲区大小异常处理在文件操作中确保处理可能出现的异常如和资源管理使用语句可以确保和被正确地关闭和释放资源总结用于从流中读取字符数据支持逐行读取和整个文件读取用于向流中写入字符数据支持逐行写入和完整内容写入性能这两个类都具有良好的性能适用于大多数文本文件处理任务与的关系与使用是基础类用于对文件进行底层字节流操作它可以作为和的基础流支持更复杂的读取和写入场景用于对文件进行低级别字节流读写操作适用于需要直接操作字节流的场景和是基于字符的高级封装类提供了便捷的读取和写入功能它们依赖于或其他类来实现底层操作分别用于从流中读取字符数据和向流中写入字符数据它们可以使用作为基础流来处理文件对文本文件的读写一般采用和因为不同的文本有不同的编码格式这两个会帮我们自动处理在中处理磁盘驱动器盘符的类主要包括该类提供了对计算机上所有驱动器的详细信息访问包括磁盘驱动器的类型可用空间总空间等盘符类功能提供对计算机上驱动器的详细信息和操作方法常用属性和方法属性获取驱动器上的可用空间以字节为单位获取驱动器上的总可用空间以字节为单位获取驱动器的总大小以字节为单位获取驱动器的类型如本地硬盘可移动磁盘网络驱动器等获取或设置驱动器的卷标获取驱动器的根目录方法获取计算机上所有的驱动器信息内存流是中的一个类属于命名空间它允许你在内存中读写数据这是一种非常方便的方式来处理数据流而不需要涉及文件系统或其他外部存储以下是的一些常见用法和特性主要特性内存中操作将数据存储在内存中这意味着读写操作非常快适用于短期存储和临时数据操作动态大小可以自动调整大小以适应写入的数据量可以从现有数据构造可以通过提供初始字节数组来初始化从而在内存中处理已有的数据主要方法和属性构造函数创建一个新的空内存流使用现有的字节数组初始化使用现有的字节数组并指定是否允许写入属性获取一个值指示当前流是否支持读取操作获取一个值指示当前流是否支持写入操作获取流中当前的数据长度获取或设置流的位置指示下一个读取或写入操作的偏移量方法从流中读取数据到字节数组将数据从字节数组写入到流中设置流的位置清空流中的缓冲区返回内存流中当前数据的字节数组方法这是一个实例它表示一个内存中的流用于读写数据方法这是类中的一个方法用于设置流中的当前位置其签名如下复制代码从位置开始的字节数可以是正数或负数枚举指定位置计算的起点枚举表示流的开头使用作为参数时指定从流的开始位置的偏移量表示当前位置使用此选项时是相对于当前位置的偏移量表示流的末尾使用此选项时是相对于流的末尾的偏移量通常是负值用于从内存中的字符串读取数据复制代码',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-06 22:11:19',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">Hexo</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> Newest Comments</span></div><div class="aside-list"><span>loading...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">August 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">13</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">July 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">No title</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-08-06T14:11:19.923Z" title="Updated 2024-08-06 22:11:19">2024-08-06</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://jie-space.github.io/2024/08/11/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C(IO)/"><header><h1 id="CrawlerTitle" itemprop="name headline">No title</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">John Doe</span><time itemprop="dateCreated datePublished" datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time><time itemprop="dateCreated datePublished" datetime="2024-08-06T14:11:19.923Z" title="Updated 2024-08-06 22:11:19">2024-08-06</time></header><h2 id="文件操作-I-O"><a href="#文件操作-I-O" class="headerlink" title="文件操作(I&#x2F;O)"></a>文件操作(I&#x2F;O)</h2><h3 id="Path类-File类"><a href="#Path类-File类" class="headerlink" title="Path类,File类"></a>Path类,File类</h3><h4 id="Path-类-静态"><a href="#Path-类-静态" class="headerlink" title="Path 类(静态)"></a><code>Path</code> 类(静态)</h4><p><code>Path</code> 类提供了一系列静态方法，用于处理文件路径字符串。它并不直接操作文件，而是用于路径的格式化、解析和验证。</p>
+<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
+<li><p><code>Combine(string path1, string path2)</code></p>
+<p>：将两个路径字符串合并成一个路径。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string combinedPath = Path.Combine(&quot;C:\\example&quot;, &quot;myfile.txt&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>GetExtension(string path)</code></p>
+<p>：获取指定路径的扩展名。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string extension = Path.GetExtension(&quot;C:\\example\\myfile.txt&quot;); // .txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>GetFileName(string path)</code></p>
+<p>：获取指定路径的文件名（不包含路径）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string fileName = Path.GetFileName(&quot;C:\\example\\myfile.txt&quot;); // myfile.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>GetDirectoryName(string path)</code></p>
+<p>：获取指定路径的目录部分。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string directoryName = Path.GetDirectoryName(&quot;C:\\example\\myfile.txt&quot;); // C:\example</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>GetFullPath(string path)</code></p>
+<p>：获取指定路径的绝对路径。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string fullPath = Path.GetFullPath(&quot;myfile.txt&quot;); // 绝对路径</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ChangeExtension(string path, string extension)</code></p>
+<p>：更改指定路径的文件扩展名。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string newPath = Path.ChangeExtension(&quot;C:\\example\\myfile.txt&quot;, &quot;.md&quot;); // C:\example\myfile.md</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>HasExtension(string path)</code></p>
+<p>：判断路径是否具有扩展名。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool hasExtension = Path.HasExtension(&quot;C:\\example\\myfile.txt&quot;); // true</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>获取文件扩展名</strong></p>
+<p><code>Console.WriteLine(Path.GetExtension(str));</code></p>
+<p><strong>获得文件地址</strong></p>
+<p><code>Console.WriteLine(Path.GetDirectoryName(str));</code></p>
+<p><strong>连接两个字符串作为路径</strong></p>
+<p><code>Console.WriteLine(Path.Combine(@&quot;a\b\c\&quot;,&quot;djaoi.txt&quot;));</code></p>
+<h4 id="File-类-静态"><a href="#File-类-静态" class="headerlink" title="File 类(静态)"></a><code>File</code> 类(静态)</h4><p><code>File</code> 类提供了一系列静态方法，用于创建、删除、复制、移动和打开文件。它直接操作文件系统中的文件，封装了底层的文件操作功能。</p>
+<h4 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h4><ul>
+<li><strong>文件创建</strong>：创建新文件或覆盖现有文件。</li>
+<li><strong>文件删除</strong>：删除指定的文件。</li>
+<li><strong>文件复制</strong>：复制文件到新的位置。</li>
+<li><strong>文件移动</strong>：移动文件到新的位置。</li>
+<li><strong>文件属性</strong>：获取或设置文件的属性信息，如大小、创建时间等。</li>
+</ul>
+<h4 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
+<li><p><code>Create(string path)</code></p>
+<p>：创建一个新的文件。文件如果已存在则覆盖。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">using (FileStream fs = File.Create(&quot;C:\\example\\myfile.txt&quot;))</span><br><span class="line">&#123;</span><br><span class="line">    // 文件创建成功</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Delete(string path)</code></p>
+<p>：删除指定的文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File.Delete(&quot;C:\\example\\myfile.txt&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Copy(string sourceFileName, string destFileName)</code></p>
+<p>：复制文件到新位置。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File.Copy(&quot;C:\\example\\sourcefile.txt&quot;, &quot;C:\\example\\destfile.txt&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Move(string sourceFileName, string destFileName)</code></p>
+<p>：移动文件到新位置。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File.Move(&quot;C:\\example\\sourcefile.txt&quot;, &quot;C:\\example\\destfile.txt&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Exists(string path)</code></p>
+<p>：判断文件是否存在。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool fileExists = File.Exists(&quot;C:\\example\\myfile.txt&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ReadAllText(string path)</code></p>
+<p>：读取文件的所有文本内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string content = File.ReadAllText(&quot;C:\\example\\myfile.txt&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>WriteAllText(string path, string contents)</code></p>
+<p>：将文本内容写入文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File.WriteAllText(&quot;C:\\example\\myfile.txt&quot;, &quot;Hello, world!&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ReadAllBytes(string path)</code></p>
+<p>：读取文件的所有字节内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">byte[] bytes = File.ReadAllBytes(&quot;C:\\example\\myfile.txt&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>WriteAllBytes(string path, byte[] bytes)</code></p>
+<p>：将字节数据写入文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File.WriteAllBytes(&quot;C:\\example\\myfile.txt&quot;, bytes);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>创建一个文件</strong></p>
+<p><code>File.Create(@&quot;C:\Users\31595\Desktop\old.txt&quot;);</code></p>
+<p><strong>删除一个文件</strong></p>
+<p><code>File.Delete(@&quot;C:\Users\31595\Desktop\hhhh.txt&quot;);</code></p>
+<p><strong>复制一个文件</strong></p>
+<p><code>File.Copy(@&quot;C:\Users\31595\Desktop\old.txt&quot;, @&quot;C:\Users\31595\Desktop\new.txt&quot;);</code></p>
+<p><strong>写入文件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string str = &quot;今天是个好天气&quot;;</span><br><span class="line">byte[] buffer = Encoding.Default.GetBytes(str);</span><br><span class="line">//没有这个文件会给你创建一个,有的话会覆盖掉</span><br><span class="line">File.WriteAllBytes(@&quot;C:\Users\31595\Desktop\old.txt&quot;,buffer);</span><br><span class="line"></span><br><span class="line">File.WriteAllLine(@&quot;C:\Users\31595\Desktop\old.txt&quot;,new string[] &#123;&quot;abc&quot;,&quot;dda&quot;&#125;);</span><br><span class="line"></span><br><span class="line">File.WriteAllText(@&quot;C:\Users\31595\Desktop\old.txt&quot;,&quot;张三李四王五&quot;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>读取文件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//按行读取,返回的是字符串数组</span><br><span class="line">string[] contents = File.ReadAllLines(@&quot;C:\Users\31595\Desktop\old.txt&quot;,Encoding.Default);//指定一个编码格式</span><br><span class="line">foreach (string line in contents)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(line);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//整个读取,返回的是字符串</span><br><span class="line">string strs = File.ReadAllText(@&quot;C:\Users\31595\Desktop\old.txt&quot;, Encoding.Default);//指定一个编码格式</span><br><span class="line">Console.WriteLine(strs);</span><br><span class="line"></span><br><span class="line">//将字节数组中每一个元素都按照指定的编码格式解码成字符串</span><br><span class="line">byte[] buffer = File.ReadAllBytes(@&quot;C:\Users\31595\Desktop\new.txt&quot;);</span><br><span class="line">string s = Encoding.GetEncoding(&quot;UTF-8&quot;).GetString(buffer);</span><br><span class="line">Console.WriteLine(s);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Directory-目录"><a href="#Directory-目录" class="headerlink" title="Directory(目录)"></a>Directory(目录)</h3><p><code>Directory</code> 是 .NET 中用于处理目录（文件夹）的<strong>静态类</strong>，属于 <code>System.IO</code> 命名空间。</p>
+<h4 id="1-特性"><a href="#1-特性" class="headerlink" title="1. 特性"></a>1. 特性</h4><ul>
+<li><strong>静态方法</strong>：所有的方法都是静态的，直接通过类名调用。</li>
+<li><strong>简化操作</strong>：适用于执行简单的目录操作，无需创建对象实例。</li>
+<li><strong>性能</strong>：与 <code>DirectoryInfo</code> 类相比，静态方法提供了一种简洁的方式来处理目录操作，但不具备面向对象的特性。</li>
+</ul>
+<h4 id="2-常用方法"><a href="#2-常用方法" class="headerlink" title="2. 常用方法"></a>2. 常用方法</h4><ul>
+<li>**<code>CreateDirectory(string path)</code>**：创建指定路径的目录。如果目录已存在，则返回现有目录。</li>
+<li>**<code>Delete(string path, bool recursive)</code>**：删除指定路径的目录。可以选择是否递归删除目录及其内容。</li>
+<li>**<code>Exists(string path)</code>**：检查指定路径的目录是否存在。</li>
+<li>**<code>GetFiles(string path)</code>**：获取指定目录中的文件列表。</li>
+<li>**<code>GetDirectories(string path)</code>**：获取指定目录中的子目录列表。</li>
+<li>**<code>GetFileSystemEntries(string path)</code>**：获取指定目录中的文件和子目录列表。</li>
+<li>**<code>Move(string sourceDirName, string destDirName)</code>**：将目录从一个位置移动到另一个位置。</li>
+</ul>
+<h3 id="绝对路径和相对路径"><a href="#绝对路径和相对路径" class="headerlink" title="绝对路径和相对路径"></a>绝对路径和相对路径</h3><p>**绝对路径:**通过给定的这个路径能直接在电脑上找到文件.</p>
+<p>**相对路径:**文件相对于应用程序的路径</p>
+<p><strong>结论:</strong></p>
+<p>我们在开发中应尽量使用相对路径</p>
+<h3 id="FileStream类-读写"><a href="#FileStream类-读写" class="headerlink" title="FileStream类(读写)"></a>FileStream类(读写)</h3><h4 id="1-特性-1"><a href="#1-特性-1" class="headerlink" title="1. 特性"></a>1. 特性</h4><ul>
+<li><strong>字节流访问</strong>：<code>FileStream</code> 处理的是原始字节流，可以读取或写入任意类型的数据。</li>
+<li><strong>同步和异步</strong>：支持同步和异步操作，适用于不同的性能需求。</li>
+<li><strong>文件操作</strong>：<strong>提供了直接对文件的流式读写操作，比 <code>File</code> 和 <code>StreamReader</code>&#x2F;<code>StreamWriter</code> 更底层。</strong></li>
+<li><strong>使用方法</strong>:不是静态类,需要实例化才能使用</li>
+</ul>
+<h4 id="2-常用构造函数"><a href="#2-常用构造函数" class="headerlink" title="2. 常用构造函数"></a>2. 常用构造函数</h4><ul>
+<li>**<code>FileStream(string path, FileMode mode)</code>**：以指定的模式打开文件。</li>
+<li>**<code>FileStream(string path, FileMode mode, FileAccess access)</code>**：以指定的模式和访问权限打开文件。</li>
+<li>**<code>FileStream(string path, FileMode mode, FileAccess access, FileShare share)</code>**：以指定的模式、访问权限和共享方式打开文件。</li>
+<li>**<code>FileStream(string path, FileMode mode, FileAccess access, FileShare share, int bufferSize)</code>**：指定缓冲区大小来打开文件。</li>
+</ul>
+<h4 id="3-常用属性"><a href="#3-常用属性" class="headerlink" title="3. 常用属性"></a>3. 常用属性</h4><ul>
+<li>**<code>CanRead</code>**：获取一个值，指示当前 <code>FileStream</code> 是否支持读取。</li>
+<li>**<code>CanWrite</code>**：获取一个值，指示当前 <code>FileStream</code> 是否支持写入。</li>
+<li>**<code>Length</code>**：获取文件的长度（以字节为单位）。</li>
+<li>**<code>Position</code>**：获取或设置当前流的位置。</li>
+<li>**<code>ReadTimeout</code>**：获取或设置读取操作的超时时间。</li>
+<li>**<code>WriteTimeout</code>**：获取或设置写入操作的超时时间。</li>
+</ul>
+<h4 id="4-常用方法"><a href="#4-常用方法" class="headerlink" title="4. 常用方法"></a>4. 常用方法</h4><ul>
+<li>**<code>Read(byte[] buffer, int offset, int count)</code>**：从流中读取字节数据到缓冲区。</li>
+<li>**<code>Write(byte[] buffer, int offset, int count)</code>**：将缓冲区的字节数据写入到流中。</li>
+<li>**<code>Seek(long offset, SeekOrigin origin)</code>**：移动流的位置到指定的偏移量。</li>
+<li>**<code>Flush()</code>**：刷新缓冲区，将所有缓冲数据写入文件。</li>
+<li>**<code>SetLength(long value)</code>**：设置流的长度。</li>
+<li>**<code>Close()</code>**：关闭 <code>FileStream</code> 并释放与文件关联的所有资源。</li>
+<li>**<code>Dispose()</code>**：释放 <code>FileStream</code> 占用的所有资源（通常通过 <code>using</code> 语句自动调用）。</li>
+</ul>
+<h3 id="FileMode和FileAccess"><a href="#FileMode和FileAccess" class="headerlink" title="FileMode和FileAccess"></a>FileMode和FileAccess</h3><h4 id="1-FileMode-枚举"><a href="#1-FileMode-枚举" class="headerlink" title="1. FileMode 枚举"></a>1. <code>FileMode</code> 枚举</h4><p><code>FileMode</code> 枚举定义了在打开或创建文件时的行为。它决定了文件如何被处理。常用的 <code>FileMode</code> 值包括：</p>
+<ul>
+<li>**<code>Create</code>**：指定如果文件不存在，则创建新文件。如果文件存在，则覆盖它。此模式下会清空现有文件的内容。</li>
+<li>**<code>CreateNew</code>**：指定如果文件不存在，则创建新文件。如果文件已经存在，则引发 <code>IOException</code>。</li>
+<li>**<code>Open</code>**：指定打开现有文件。文件必须存在，否则引发 <code>FileNotFoundException</code>。</li>
+<li>**<code>OpenOrCreate</code>**：指定如果文件存在，则打开它。如果文件不存在，则创建新文件。</li>
+<li>**<code>Truncate</code>**：指定打开现有文件。文件必须存在。该文件的长度将被截断为零字节。</li>
+<li>**<code>Append</code>**：指定打开文件并将其内容追加到文件末尾。如果文件不存在，则创建新文件。</li>
+</ul>
+<h4 id="2-FileAccess-枚举"><a href="#2-FileAccess-枚举" class="headerlink" title="2. FileAccess 枚举"></a>2. <code>FileAccess</code> 枚举</h4><p><code>FileAccess</code> 枚举定义了对文件的访问权限。它指定了你对文件的操作权限，包括读取、写入或两者皆有：</p>
+<ul>
+<li>**<code>Read</code>**：指定文件只能进行读取操作。</li>
+<li>**<code>Write</code>**：指定文件只能进行写入操作。</li>
+<li>**<code>ReadWrite</code>**：指定文件可以进行读取和写入操作。</li>
+</ul>
+<h4 id="3-示例"><a href="#3-示例" class="headerlink" title="3. 示例"></a>3. 示例</h4><h5 id="读取文件内容"><a href="#读取文件内容" class="headerlink" title="读取文件内容"></a>读取文件内容</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">string filePath = @&quot;C:\example\myfile.txt&quot;;</span><br><span class="line"></span><br><span class="line">       // 以读取模式打开文件</span><br><span class="line">       using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))</span><br><span class="line">       &#123;</span><br><span class="line">           // 读取文件内容</span><br><span class="line">           byte[] buffer = new byte[fileStream.Length];//每次多大</span><br><span class="line">           int bytesRead = fileStream.Read(buffer, 0, buffer.Length);//读出来的有效数量</span><br><span class="line"></span><br><span class="line">           // 打印文件内容</span><br><span class="line">           Console.WriteLine(&quot;File content:&quot;);</span><br><span class="line">           Console.WriteLine(System.Text.Encoding.UTF8.GetString(buffer, 0, bytesRead));</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="写入文件内容"><a href="#写入文件内容" class="headerlink" title="写入文件内容"></a>写入文件内容</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">string filePath = @&quot;C:\example\myfile.txt&quot;;</span><br><span class="line">        string content = &quot;Hello, FileStream!&quot;;</span><br><span class="line"></span><br><span class="line">        // 以写入模式打开文件</span><br><span class="line">        using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))</span><br><span class="line">        &#123;</span><br><span class="line">            // 写入内容到文件</span><br><span class="line">            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(content);</span><br><span class="line">            fileStream.Write(buffer, 0, buffer.Length);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(&quot;Content written to file.&quot;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">string filePath = @&quot;C:\example\myfile.txt&quot;;</span><br><span class="line"></span><br><span class="line">        // 异步写入文件</span><br><span class="line">        using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None, 4096, true))</span><br><span class="line">        //4096: 这是缓冲区大小（以字节为单位）。</span><br><span class="line">        //true: 这个布尔值指定了文件是否应异步打开。</span><br><span class="line">        &#123;</span><br><span class="line">        // 将字符串转换为字节数组  </span><br><span class="line">            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(&quot;Hello, async FileStream!&quot;);</span><br><span class="line">            await fileStream.WriteAsync(buffer, 0, buffer.Length);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(&quot;Asynchronous content written to file.&quot;);</span><br><span class="line"></span><br><span class="line">        // 异步读取文件</span><br><span class="line">        using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.None, 4096, true))</span><br><span class="line">        &#123;</span><br><span class="line">            byte[] buffer = new byte[fileStream.Length];</span><br><span class="line">            int bytesRead = await fileStream.ReadAsync(buffer, 0, buffer.Length);</span><br><span class="line"></span><br><span class="line">            Console.WriteLine(&quot;Asynchronous file content:&quot;);</span><br><span class="line">            Console.WriteLine(System.Text.Encoding.UTF8.GetString(buffer, 0, bytesRead));</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//使用FileStream类读取数据</span><br><span class="line">FileStream fsRead = new FileStream(@&quot;C:\Users\31595\Desktop\old.txt&quot;, FileMode.OpenOrCreate, FileAccess.ReadWrite);</span><br><span class="line">byte[] buffer = new byte[1024];//每次读取的最大字节数</span><br><span class="line">//返回每次实际读取到的有效字节数</span><br><span class="line">int r = fsRead.Read(buffer, 0, buffer.Length);</span><br><span class="line">//将字节数组中每一个元素按照指定的编码格式解码成字符串</span><br><span class="line">string s = Encoding.Default.GetString(buffer,0,r);</span><br><span class="line">//关闭流</span><br><span class="line">fsRead.Close();</span><br><span class="line">//释放流占用的资源</span><br><span class="line">fsRead.Dispose();</span><br><span class="line">Console.WriteLine(s);</span><br></pre></td></tr></table></figure>
+
+<p>将创建文件流对象的过程写在using中,会自动帮我们释放流所占用的资源.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">using (FileStream fsWrite = new FileStream(@&quot;C:\Users\31595\Desktop\new.txt&quot;,FileMode.OpenOrCreate,FileAccess.ReadWrite))</span><br><span class="line">&#123;</span><br><span class="line">    string str = &quot;看会不会覆盖&quot;;</span><br><span class="line">    byte[] butter = Encoding.Default.GetBytes(str);</span><br><span class="line">    fsWrite.Write(butter,0,butter.Length);//(字节块,从哪开始,最多写入的字节数)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="FileInfo-对文件操作-和DirectoryInfo-对目录操作"><a href="#FileInfo-对文件操作-和DirectoryInfo-对目录操作" class="headerlink" title="FileInfo(对文件操作)和DirectoryInfo(对目录操作)"></a>FileInfo(对文件操作)和DirectoryInfo(对目录操作)</h3><h4 id="FileInfo类"><a href="#FileInfo类" class="headerlink" title="FileInfo类"></a>FileInfo类</h4><h4 id="1-特性-2"><a href="#1-特性-2" class="headerlink" title="1. 特性"></a>1. 特性</h4><ul>
+<li><strong>文件信息</strong>：可以获取文件的各种属性，如文件名、路径、创建时间、修改时间等。</li>
+<li><strong>文件操作</strong>：提供了创建、删除、复制、移动等文件操作的功能。</li>
+<li><strong>对象导向</strong>：与 <code>File</code> 类（静态方法）相比，**<code>FileInfo</code> 类是面向对象的**，它允许你创建文件对象，然后调用方法来执行操作。</li>
+</ul>
+<h4 id="2-常用属性"><a href="#2-常用属性" class="headerlink" title="2. 常用属性"></a>2. 常用属性</h4><ul>
+<li>**<code>Name</code>**：获取文件的名称（不包括路径）。</li>
+<li>**<code>FullName</code>**：获取文件的完整路径。</li>
+<li>**<code>Extension</code>**：获取文件的扩展名（包括 <code>.</code>）。</li>
+<li>**<code>Directory</code>**：获取一个 <code>DirectoryInfo</code> 对象，表示文件所在的目录。</li>
+<li>**<code>Length</code>**：获取文件的大小（以字节为单位）。</li>
+<li>**<code>CreationTime</code>**：获取文件的创建时间。</li>
+<li>**<code>LastAccessTime</code>**：获取文件的上次访问时间。</li>
+<li>**<code>LastWriteTime</code>**：获取文件的最后修改时间。</li>
+</ul>
+<h4 id="3-常用方法"><a href="#3-常用方法" class="headerlink" title="3. 常用方法"></a>3. 常用方法</h4><ul>
+<li>**<code>Create()</code>**：创建一个新的文件。</li>
+<li>**<code>Delete()</code>**：删除文件。</li>
+<li>**<code>CopyTo(string destFileName)</code>**：将文件复制到指定路径。</li>
+<li>**<code>MoveTo(string destFileName)</code>**：将文件移动到指定路径。</li>
+<li>**<code>Open()</code>**：打开文件并返回一个 <code>FileStream</code> 对象，用于读写操作。</li>
+<li>**<code>OpenRead()</code>**：以读取模式打开文件并返回一个 <code>FileStream</code> 对象。</li>
+<li>**<code>OpenWrite()</code>**：以写入模式打开文件并返回一个 <code>FileStream</code> 对象。</li>
+</ul>
+<h5 id="获取文件信息"><a href="#获取文件信息" class="headerlink" title="获取文件信息"></a>获取文件信息</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">string filePath = @&quot;C:\example\myfile.txt&quot;;</span><br><span class="line">        FileInfo fileInfo = new FileInfo(filePath);</span><br><span class="line"></span><br><span class="line">        if (fileInfo.Exists)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine($&quot;File Name: &#123;fileInfo.Name&#125;&quot;);</span><br><span class="line">            Console.WriteLine($&quot;Full Path: &#123;fileInfo.FullName&#125;&quot;);</span><br><span class="line">            Console.WriteLine($&quot;Extension: &#123;fileInfo.Extension&#125;&quot;);</span><br><span class="line">            Console.WriteLine($&quot;Size: &#123;fileInfo.Length&#125; bytes&quot;);</span><br><span class="line">            Console.WriteLine($&quot;Created On: &#123;fileInfo.CreationTime&#125;&quot;);</span><br><span class="line">            Console.WriteLine($&quot;Last Accessed On: &#123;fileInfo.LastAccessTime&#125;&quot;);</span><br><span class="line">            Console.WriteLine($&quot;Last Modified On: &#123;fileInfo.LastWriteTime&#125;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;File does not exist.&quot;);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="创建、复制和删除文件"><a href="#创建、复制和删除文件" class="headerlink" title="创建、复制和删除文件"></a>创建、复制和删除文件</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">string sourcePath = @&quot;C:\example\sourcefile.txt&quot;;</span><br><span class="line">string destPath = @&quot;C:\example\copiedfile.txt&quot;;</span><br><span class="line">string newPath = @&quot;C:\example\movedfile.txt&quot;;</span><br><span class="line"></span><br><span class="line">FileInfo fileInfo = new FileInfo(sourcePath);</span><br><span class="line"></span><br><span class="line">// 创建一个新的文件</span><br><span class="line">if (!fileInfo.Exists)</span><br><span class="line">&#123;</span><br><span class="line">    using (FileStream fs = fileInfo.Create())</span><br><span class="line">    &#123;</span><br><span class="line">        byte[] content = System.Text.Encoding.UTF8.GetBytes(&quot;Hello, FileInfo!&quot;);</span><br><span class="line">        fs.Write(content, 0, content.Length);</span><br><span class="line">    &#125;</span><br><span class="line">    Console.WriteLine(&quot;File created.&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 复制文件</span><br><span class="line">fileInfo.CopyTo(destPath, overwrite: true);</span><br><span class="line">Console.WriteLine(&quot;File copied.&quot;);</span><br><span class="line"></span><br><span class="line">// 移动文件</span><br><span class="line">fileInfo.MoveTo(newPath);</span><br><span class="line">Console.WriteLine(&quot;File moved.&quot;);</span><br><span class="line"></span><br><span class="line">// 删除文件</span><br><span class="line">FileInfo movedFileInfo = new FileInfo(newPath);</span><br><span class="line">movedFileInfo.Delete();</span><br><span class="line">Console.WriteLine(&quot;File deleted.&quot;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="DirectoryInfo类-对文件夹操作"><a href="#DirectoryInfo类-对文件夹操作" class="headerlink" title="DirectoryInfo类(对文件夹操作)"></a>DirectoryInfo类(对文件夹操作)</h4><h4 id="1-常用属性"><a href="#1-常用属性" class="headerlink" title="1. 常用属性"></a>1. 常用属性</h4><ul>
+<li>**<code>Name</code>**：获取目录的名称（不包括路径）。</li>
+<li>**<code>FullName</code>**：获取目录的完整路径。</li>
+<li>**<code>Parent</code>**：获取一个 <code>DirectoryInfo</code> 对象，表示当前目录的父目录。</li>
+<li>**<code>Root</code>**：获取一个 <code>DirectoryInfo</code> 对象，表示目录的根目录（如驱动器根目录）。</li>
+<li>**<code>Exists</code>**：获取一个值，指示目录是否存在。</li>
+</ul>
+<h4 id="2-常用方法-1"><a href="#2-常用方法-1" class="headerlink" title="2. 常用方法"></a>2. 常用方法</h4><ul>
+<li><p>**<code>Create()</code>**：创建目录。如果目录已存在，则不执行操作。</p>
+</li>
+<li><p>**<code>Delete()</code>**：删除目录。可以选择是否递归删除目录及其内容。</p>
+</li>
+<li><p>**<code>GetFiles()</code>**：获取当前目录中的文件。可以选择筛选文件的搜索模式。</p>
+</li>
+<li><p>**<code>GetDirectories()</code>**：获取当前目录中的子目录。可以选择筛选目录的搜索模式。</p>
+</li>
+<li><p>**<code>GetFileSystemInfos()</code>**：获取当前目录中的文件和子目录。</p>
+</li>
+<li><p>**<code>MoveTo(string destDirName)</code>**：将目录移动到指定路径。</p>
+</li>
+<li></li>
+</ul>
+<h5 id="创建、检查和删除目录"><a href="#创建、检查和删除目录" class="headerlink" title="创建、检查和删除目录"></a>创建、检查和删除目录</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">string directoryPath = @&quot;C:\example\myDirectory&quot;;</span><br><span class="line">       string newDirectoryPath = @&quot;C:\example\myNewDirectory&quot;;</span><br><span class="line"></span><br><span class="line">       // 创建目录</span><br><span class="line">       if (!Directory.Exists(directoryPath))</span><br><span class="line">       &#123;</span><br><span class="line">           Directory.CreateDirectory(directoryPath);</span><br><span class="line">           Console.WriteLine(&quot;Directory created.&quot;);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       // 检查目录是否存在</span><br><span class="line">       if (Directory.Exists(directoryPath))</span><br><span class="line">       &#123;</span><br><span class="line">           Console.WriteLine(&quot;Directory exists.&quot;);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       // 移动目录</span><br><span class="line">       if (Directory.Exists(directoryPath))</span><br><span class="line">       &#123;</span><br><span class="line">           Directory.Move(directoryPath, newDirectoryPath);</span><br><span class="line">           Console.WriteLine(&quot;Directory moved.&quot;);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       // 删除目录（递归）</span><br><span class="line">       if (Directory.Exists(newDirectoryPath))</span><br><span class="line">       &#123;</span><br><span class="line">           Directory.Delete(newDirectoryPath, recursive: true);</span><br><span class="line">           Console.WriteLine(&quot;Directory deleted.&quot;);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="列出文件和子目录"><a href="#列出文件和子目录" class="headerlink" title="列出文件和子目录"></a>列出文件和子目录</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">string directoryPath = @&quot;C:\example&quot;;</span><br><span class="line"></span><br><span class="line">        // 列出目录中的文件</span><br><span class="line">        if (Directory.Exists(directoryPath))</span><br><span class="line">        &#123;</span><br><span class="line">            string[] files = Directory.GetFiles(directoryPath);</span><br><span class="line">            Console.WriteLine(&quot;Files in the directory:&quot;);</span><br><span class="line">            foreach (string file in files)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(Path.GetFileName(file));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            // 列出目录中的子目录</span><br><span class="line">            string[] directories = Directory.GetDirectories(directoryPath);</span><br><span class="line">            Console.WriteLine(&quot;Subdirectories in the directory:&quot;);</span><br><span class="line">            foreach (string dir in directories)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(Path.GetFileName(dir));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            // 列出目录中的文件和子目录</span><br><span class="line">            string[] fileSystemEntries = Directory.GetFileSystemEntries(directoryPath);</span><br><span class="line">            Console.WriteLine(&quot;Files and directories in the directory:&quot;);</span><br><span class="line">            foreach (string entry in fileSystemEntries)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(Path.GetFileName(entry));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;Directory does not exist.&quot;);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="StreamReader和StreamWriter-文本文件"><a href="#StreamReader和StreamWriter-文本文件" class="headerlink" title="StreamReader和StreamWriter(文本文件)"></a>StreamReader和StreamWriter(文本文件)</h3><h4 id="1-StreamReader-类"><a href="#1-StreamReader-类" class="headerlink" title="1. StreamReader 类"></a>1. <code>StreamReader</code> 类</h4><p><code>StreamReader</code> 用于从流中读取字符（通常是文本文件）。它封装了 <code>Stream</code> 类（如 <code>FileStream</code>）的读取操作，支持读取文本文件中的字符数据。</p>
+<h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><ul>
+<li><strong>字符流读取</strong>：处理字符数据，支持文本编码转换。</li>
+<li><strong>行读取</strong>：可以逐行读取文本内容。</li>
+<li><strong>缓冲</strong>：内部使用缓冲机制提高读取性能。</li>
+</ul>
+<h4 id="常用构造函数"><a href="#常用构造函数" class="headerlink" title="常用构造函数"></a>常用构造函数</h4><ul>
+<li>**<code>StreamReader(Stream stream)</code>**：初始化 <code>StreamReader</code> 类的新实例，使用指定的流。</li>
+<li>**<code>StreamReader(string path)</code>**：初始化 <code>StreamReader</code> 类的新实例，使用指定路径的文件流。</li>
+<li>**<code>StreamReader(Stream stream, Encoding encoding)</code>**：初始化 <code>StreamReader</code> 类的新实例，使用指定的流和编码。</li>
+</ul>
+<h4 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
+<li>**<code>Read()</code>**：读取下一个字符的整数表示形式。</li>
+<li>**<code>Read(char[] buffer, int index, int count)</code>**：从流中读取字符到缓冲区。</li>
+<li>**<code>ReadLine()</code>**：读取当前行的字符，直到换行符或流的末尾。</li>
+<li>**<code>ReadToEnd()</code>**：读取流中的所有字符，并将其作为字符串返回。</li>
+<li>**<code>Close()</code>**：关闭 <code>StreamReader</code> 实例并释放与流相关的资源。</li>
+</ul>
+<h4 id="2-StreamWriter-类"><a href="#2-StreamWriter-类" class="headerlink" title="2. StreamWriter 类"></a>2. <code>StreamWriter</code> 类</h4><p><code>StreamWriter</code> 用于向流中写入字符数据（通常是文本文件）。它封装了 <code>Stream</code> 类（如 <code>FileStream</code>）的写入操作，支持将字符数据写入文件。</p>
+<h4 id="特性-1"><a href="#特性-1" class="headerlink" title="特性"></a>特性</h4><ul>
+<li><strong>字符流写入</strong>：处理字符数据，支持文本编码转换。</li>
+<li><strong>行写入</strong>：可以逐行写入文本内容。</li>
+<li><strong>缓冲</strong>：内部使用缓冲机制提高写入性能。</li>
+</ul>
+<h4 id="常用构造函数-1"><a href="#常用构造函数-1" class="headerlink" title="常用构造函数"></a>常用构造函数</h4><ul>
+<li>**<code>StreamWriter(Stream stream)</code>**：初始化 <code>StreamWriter</code> 类的新实例，使用指定的流。</li>
+<li>**<code>StreamWriter(string path)</code>**：初始化 <code>StreamWriter</code> 类的新实例，使用指定路径的文件流。</li>
+<li>**<code>StreamWriter(Stream stream, Encoding encoding)</code>**：初始化 <code>StreamWriter</code> 类的新实例，使用指定的流和编码。</li>
+</ul>
+<h4 id="常用方法-3"><a href="#常用方法-3" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
+<li>**<code>Write(string value)</code>**：写入字符串数据到流。</li>
+<li>**<code>WriteLine(string value)</code>**：写入字符串数据和一个行终止符到流。</li>
+<li>**<code>Flush()</code>**：清空缓冲区，将所有缓冲的字符写入基础流。</li>
+<li>**<code>Close()</code>**：关闭 <code>StreamWriter</code> 实例并释放与流相关的资源。</li>
+</ul>
+<p>使用 <code>StreamReader</code> 读取文件内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string filePath = @&quot;C:\example\myfile.txt&quot;;</span><br><span class="line"></span><br><span class="line">// 使用 StreamReader 读取文件内容</span><br><span class="line">using (StreamReader reader = new StreamReader(filePath))</span><br><span class="line">&#123;</span><br><span class="line">    string content = reader.ReadToEnd(); // 读取整个文件内容</span><br><span class="line">    Console.WriteLine(&quot;File content:&quot;);</span><br><span class="line">    Console.WriteLine(content);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>StreamWriter</code> 写入文件内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">string filePath = @&quot;C:\example\myfile.txt&quot;;</span><br><span class="line">        string content = &quot;Hello, StreamWriter!&quot;;</span><br><span class="line"></span><br><span class="line">        // 使用 StreamWriter 写入文件内容</span><br><span class="line">        using (StreamWriter writer = new StreamWriter(filePath))</span><br><span class="line">        &#123;</span><br><span class="line">            writer.WriteLine(content); // 写入字符串内容和换行符</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(&quot;Content written to file.&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>StreamReader</code> 和 <code>StreamWriter</code> 处理大文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">string inputPath = @&quot;C:\example\inputfile.txt&quot;;</span><br><span class="line">        string outputPath = @&quot;C:\example\outputfile.txt&quot;;</span><br><span class="line"></span><br><span class="line">        // 使用 StreamReader 读取文件内容</span><br><span class="line">        using (StreamReader reader = new StreamReader(inputPath))</span><br><span class="line">        using (StreamWriter writer = new StreamWriter(outputPath))</span><br><span class="line">        &#123;</span><br><span class="line">            string line;</span><br><span class="line">            while ((line = reader.ReadLine()) != null)</span><br><span class="line">            &#123;</span><br><span class="line">                // 逐行读取并写入新文件</span><br><span class="line">                writer.WriteLine(line);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(&quot;File copied.&quot;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="性能和注意事项"><a href="#性能和注意事项" class="headerlink" title="性能和注意事项"></a>性能和注意事项</h4><ul>
+<li><strong>缓冲</strong>：<code>StreamReader</code> 和 <code>StreamWriter</code> 都使用内部缓冲区来提高性能，通常不需要手动调整缓冲区大小。</li>
+<li><strong>异常处理</strong>：在文件操作中，确保处理可能出现的异常，如 <code>FileNotFoundException</code>、<code>UnauthorizedAccessException</code> 和 <code>IOException</code>。</li>
+<li><strong>资源管理</strong>：使用 <code>using</code> 语句可以确保 <code>StreamReader</code> 和 <code>StreamWriter</code> 被正确地关闭和释放资源。</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>**<code>StreamReader</code>**：用于从流中读取字符数据，支持逐行读取和整个文件读取。</li>
+<li>**<code>StreamWriter</code>**：用于向流中写入字符数据，支持逐行写入和完整内容写入。</li>
+<li><strong>性能</strong>：这两个类都具有良好的性能，适用于大多数文本文件处理任务。</li>
+</ul>
+<h4 id="与FileStream的关系与使用"><a href="#与FileStream的关系与使用" class="headerlink" title="与FileStream的关系与使用"></a>与FileStream的关系与使用</h4><ul>
+<li><strong><code>FileStream</code></strong> 是基础类，用于对文件进行底层字节流操作。它可以作为 <code>StreamReader</code> 和 <code>StreamWriter</code> 的基础流，支持更复杂的读取和写入场景。用于对文件进行低级别字节流读写操作。适用于需要直接操作字节流的场景。</li>
+<li><strong><code>StreamReader</code></strong> 和 <strong><code>StreamWriter</code></strong> 是基于字符的高级封装类，提供了便捷的读取和写入功能。它们依赖于 <code>FileStream</code> 或其他 <code>Stream</code> 类来实现底层操作。分别用于从流中读取字符数据和向流中写入字符数据。它们可以使用 <code>FileStream</code> 作为基础流来处理文件。对文本文件的读写一般采用**<code>StreamReader</code>** 和 <strong><code>StreamWriter</code></strong>,因为不同的文本有不同的编码格式,这两个会帮我们自动处理.</li>
+</ul>
+<p>在 .NET 中，处理磁盘驱动器（盘符）的类主要包括 <code>System.IO.DriveInfo</code>。该类提供了对计算机上所有驱动器的详细信息访问，包括磁盘驱动器的类型、可用空间、总空间等。</p>
+<h3 id="System-IO-DriveInfo盘符类"><a href="#System-IO-DriveInfo盘符类" class="headerlink" title="System.IO.DriveInfo盘符类"></a><code>System.IO.DriveInfo</code>盘符类</h3><p><strong>功能</strong>：提供对计算机上驱动器的详细信息和操作方法。</p>
+<p><strong>常用属性和方法</strong>：</p>
+<ul>
+<li><strong>属性</strong>：<ul>
+<li><code>DriveInfo.AvailableFreeSpace</code>：获取驱动器上的可用空间（以字节为单位）。</li>
+<li><code>DriveInfo.TotalFreeSpace</code>：获取驱动器上的总可用空间（以字节为单位）。</li>
+<li><code>DriveInfo.TotalSize</code>：获取驱动器的总大小（以字节为单位）。</li>
+<li><code>DriveInfo.DriveType</code>：获取驱动器的类型（如本地硬盘、可移动磁盘、网络驱动器等）。</li>
+<li><code>DriveInfo.VolumeLabel</code>：获取或设置驱动器的卷标。</li>
+<li><code>DriveInfo.RootDirectory</code>：获取驱动器的根目录。</li>
+</ul>
+</li>
+<li><strong>方法</strong>：<ul>
+<li><code>DriveInfo.GetDrives()</code>：获取计算机上所有的驱动器信息。</li>
+</ul>
+</li>
+</ul>
+<h3 id="MemoryStream-内存流"><a href="#MemoryStream-内存流" class="headerlink" title="MemoryStream 内存流"></a><code>MemoryStream</code> 内存流</h3><p><code>MemoryStream</code> 是 C# 中的一个类，属于 <code>System.IO</code> 命名空间，它允许你在内存中读写数据。这是一种非常方便的方式来处理数据流，而不需要涉及文件系统或其他外部存储。以下是 <code>MemoryStream</code> 的一些常见用法和特性：</p>
+<h4 id="主要特性"><a href="#主要特性" class="headerlink" title="主要特性"></a>主要特性</h4><ol>
+<li><strong>内存中操作</strong>：<ul>
+<li><code>MemoryStream</code> 将数据存储在内存中，这意味着读写操作非常快，适用于短期存储和临时数据操作。</li>
+</ul>
+</li>
+<li><strong>动态大小</strong>：<ul>
+<li><code>MemoryStream</code> 可以自动调整大小以适应写入的数据量。</li>
+</ul>
+</li>
+<li><strong>可以从现有数据构造</strong>：<ul>
+<li>可以通过提供初始字节数组来初始化 <code>MemoryStream</code>，从而在内存中处理已有的数据。</li>
+</ul>
+</li>
+</ol>
+<h4 id="主要方法和属性"><a href="#主要方法和属性" class="headerlink" title="主要方法和属性"></a>主要方法和属性</h4><ul>
+<li><strong>构造函数</strong>：<ul>
+<li><code>MemoryStream()</code>：创建一个新的空内存流。</li>
+<li><code>MemoryStream(byte[] buffer)</code>：使用现有的字节数组初始化 <code>MemoryStream</code>。</li>
+<li><code>MemoryStream(byte[] buffer, bool writable)</code>：使用现有的字节数组，并指定是否允许写入。</li>
+</ul>
+</li>
+<li><strong>属性</strong>：<ul>
+<li><code>CanRead</code>：获取一个值，指示当前流是否支持读取操作。</li>
+<li><code>CanWrite</code>：获取一个值，指示当前流是否支持写入操作.</li>
+<li><code>Length</code>：获取流中当前的数据长度。</li>
+<li><code>Position</code>：获取或设置流的位置（指示下一个读取或写入操作的偏移量）。</li>
+</ul>
+</li>
+<li><strong>方法</strong>：<ul>
+<li><code>Read(byte[] buffer, int offset, int count)</code>：从流中读取数据到字节数组。</li>
+<li><code>Write(byte[] buffer, int offset, int count)</code>：将数据从字节数组写入到流中。</li>
+<li><code>Seek(long offset, SeekOrigin origin)</code>：设置流的位置。</li>
+<li><code>Flush()</code>：清空流中的缓冲区。</li>
+<li><code>ToArray()</code>：返回内存流中当前数据的字节数组。</li>
+</ul>
+</li>
+</ul>
+<h4 id="ms-Seek-方法"><a href="#ms-Seek-方法" class="headerlink" title="ms.Seek 方法"></a><code>ms.Seek</code> 方法</h4><ul>
+<li><p><strong><code>ms</code></strong>: 这是一个 <code>MemoryStream</code> 实例，它表示一个内存中的流，用于读写数据。</p>
+</li>
+<li><p><strong><code>Seek</code> 方法</strong>: 这是 <code>Stream</code> 类中的一个方法，用于设置流中的当前位置。其签名如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">csharp</span><br><span class="line">复制代码</span><br><span class="line">public long Seek(long offset, SeekOrigin origin);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong><code>offset</code></strong>: 从 <code>origin</code> 位置开始的字节数。可以是正数或负数。</li>
+<li><strong><code>origin</code></strong>: <code>SeekOrigin</code> 枚举，指定位置计算的起点。</li>
+</ul>
+</li>
+</ul>
+<h4 id="SeekOrigin-枚举"><a href="#SeekOrigin-枚举" class="headerlink" title="SeekOrigin 枚举"></a><code>SeekOrigin</code> 枚举</h4><ul>
+<li><strong><code>SeekOrigin.Begin</code></strong>: 表示流的开头。使用 <code>SeekOrigin.Begin</code> 作为 <code>origin</code> 参数时，<code>offset</code> 指定从流的开始位置的偏移量。</li>
+<li><strong><code>SeekOrigin.Current</code></strong>: 表示当前位置。使用此选项时，<code>offset</code> 是相对于当前位置的偏移量。</li>
+<li><strong><code>SeekOrigin.End</code></strong>: 表示流的末尾。使用此选项时，<code>offset</code> 是相对于流的末尾的偏移量（通常是负值）。</li>
+</ul>
+<h3 id="4-StringReader"><a href="#4-StringReader" class="headerlink" title="4. StringReader"></a>4. <strong><code>StringReader</code></strong></h3><p><code>StringReader</code> 用于从内存中的字符串读取数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">csharp复制代码using System;</span><br><span class="line">using System.IO;</span><br><span class="line"></span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        string input = &quot;Hello, StringReader!&quot;;</span><br><span class="line">        </span><br><span class="line">        using (StringReader reader = new StringReader(input))</span><br><span class="line">        &#123;</span><br><span class="line">            string line;</span><br><span class="line">            while ((line = reader.ReadLine()) != null)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(line);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">John Doe</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://jie-space.github.io/2024/08/11/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C(IO)/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://jie-space.github.io/2024/08/11/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C(IO)/')">Hexo</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://jie-space.github.io/2024/08/11/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C(IO)/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Hexo&amp;url=http://jie-space.github.io/2024/08/11/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C(IO)/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/08/11/%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">哈哈哈哈哈哈</div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C-I-O"><span class="toc-number">1.</span> <span class="toc-text">文件操作(I&#x2F;O)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Path%E7%B1%BB-File%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">Path类,File类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Path-%E7%B1%BB-%E9%9D%99%E6%80%81"><span class="toc-number">1.1.1.</span> <span class="toc-text">Path 类(静态)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">常用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#File-%E7%B1%BB-%E9%9D%99%E6%80%81"><span class="toc-number">1.1.3.</span> <span class="toc-text">File 类(静态)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.4.</span> <span class="toc-text">主要功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-1"><span class="toc-number">1.1.5.</span> <span class="toc-text">常用方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Directory-%E7%9B%AE%E5%BD%95"><span class="toc-number">1.2.</span> <span class="toc-text">Directory(目录)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%89%B9%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 常用方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">1.3.</span> <span class="toc-text">绝对路径和相对路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FileStream%E7%B1%BB-%E8%AF%BB%E5%86%99"><span class="toc-number">1.4.</span> <span class="toc-text">FileStream类(读写)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%89%B9%E6%80%A7-1"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. 特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. 常用构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7"><span class="toc-number">1.4.3.</span> <span class="toc-text">3. 常用属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.4.</span> <span class="toc-text">4. 常用方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FileMode%E5%92%8CFileAccess"><span class="toc-number">1.5.</span> <span class="toc-text">FileMode和FileAccess</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-FileMode-%E6%9E%9A%E4%B8%BE"><span class="toc-number">1.5.1.</span> <span class="toc-text">1. FileMode 枚举</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-FileAccess-%E6%9E%9A%E4%B8%BE"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. FileAccess 枚举</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.5.3.</span> <span class="toc-text">3. 示例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">读取文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">写入文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C"><span class="toc-number">1.5.3.3.</span> <span class="toc-text">异步操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FileInfo-%E5%AF%B9%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C-%E5%92%8CDirectoryInfo-%E5%AF%B9%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-number">1.6.</span> <span class="toc-text">FileInfo(对文件操作)和DirectoryInfo(对目录操作)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#FileInfo%E7%B1%BB"><span class="toc-number">1.6.1.</span> <span class="toc-text">FileInfo类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%89%B9%E6%80%A7-2"><span class="toc-number">1.6.2.</span> <span class="toc-text">1. 特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7"><span class="toc-number">1.6.3.</span> <span class="toc-text">2. 常用属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.4.</span> <span class="toc-text">3. 常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E4%BF%A1%E6%81%AF"><span class="toc-number">1.6.4.1.</span> <span class="toc-text">获取文件信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E3%80%81%E5%A4%8D%E5%88%B6%E5%92%8C%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-number">1.6.4.2.</span> <span class="toc-text">创建、复制和删除文件</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DirectoryInfo%E7%B1%BB-%E5%AF%B9%E6%96%87%E4%BB%B6%E5%A4%B9%E6%93%8D%E4%BD%9C"><span class="toc-number">1.6.5.</span> <span class="toc-text">DirectoryInfo类(对文件夹操作)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7"><span class="toc-number">1.6.6.</span> <span class="toc-text">1. 常用属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-1"><span class="toc-number">1.6.7.</span> <span class="toc-text">2. 常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E3%80%81%E6%A3%80%E6%9F%A5%E5%92%8C%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95"><span class="toc-number">1.6.7.1.</span> <span class="toc-text">创建、检查和删除目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%97%E5%87%BA%E6%96%87%E4%BB%B6%E5%92%8C%E5%AD%90%E7%9B%AE%E5%BD%95"><span class="toc-number">1.6.7.2.</span> <span class="toc-text">列出文件和子目录</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StreamReader%E5%92%8CStreamWriter-%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="toc-number">1.7.</span> <span class="toc-text">StreamReader和StreamWriter(文本文件)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-StreamReader-%E7%B1%BB"><span class="toc-number">1.7.1.</span> <span class="toc-text">1. StreamReader 类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E6%80%A7"><span class="toc-number">1.7.2.</span> <span class="toc-text">特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.7.3.</span> <span class="toc-text">常用构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-2"><span class="toc-number">1.7.4.</span> <span class="toc-text">常用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-StreamWriter-%E7%B1%BB"><span class="toc-number">1.7.5.</span> <span class="toc-text">2. StreamWriter 类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E6%80%A7-1"><span class="toc-number">1.7.6.</span> <span class="toc-text">特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0-1"><span class="toc-number">1.7.7.</span> <span class="toc-text">常用构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-3"><span class="toc-number">1.7.8.</span> <span class="toc-text">常用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%92%8C%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.7.9.</span> <span class="toc-text">性能和注意事项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.7.10.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8EFileStream%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B8%8E%E4%BD%BF%E7%94%A8"><span class="toc-number">1.7.11.</span> <span class="toc-text">与FileStream的关系与使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#System-IO-DriveInfo%E7%9B%98%E7%AC%A6%E7%B1%BB"><span class="toc-number">1.8.</span> <span class="toc-text">System.IO.DriveInfo盘符类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MemoryStream-%E5%86%85%E5%AD%98%E6%B5%81"><span class="toc-number">1.9.</span> <span class="toc-text">MemoryStream 内存流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%89%B9%E6%80%A7"><span class="toc-number">1.9.1.</span> <span class="toc-text">主要特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95%E5%92%8C%E5%B1%9E%E6%80%A7"><span class="toc-number">1.9.2.</span> <span class="toc-text">主要方法和属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ms-Seek-%E6%96%B9%E6%B3%95"><span class="toc-number">1.9.3.</span> <span class="toc-text">ms.Seek 方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SeekOrigin-%E6%9E%9A%E4%B8%BE"><span class="toc-number">1.9.4.</span> <span class="toc-text">SeekOrigin 枚举</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-StringReader"><span class="toc-number">1.10.</span> <span class="toc-text">4. StringReader</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C(IO)/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E7%89%B9%E6%80%A7/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E6%9E%9A%E4%B8%BE/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.854Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="John Doe" target="_blank">John Doe</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">Articles</div><div class="length-num">17</div></a><a href="/tags/" title="tag"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/" title="category"><div class="headline">Categories</div><div class="length-num">0</div></a></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="Display Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>Display Mode</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 John Doe 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

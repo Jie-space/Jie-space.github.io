@@ -1,0 +1,407 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Hexo | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="application-name" content="Hexo"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Hexo"><meta property="og:url" content="http://jie-space.github.io/2024/08/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="简述装箱拆箱 1装箱是指将值类型（int，float等）转换为对象类型object类型的过程，拆箱是将对象类型转换为原始类型的过程，装箱操可以通过赋值操作自动实现，拆箱操作要强制类型转换，如果转换类型和原类型不匹配会抛出类型转异常。  class 和 struct 1234567结构是值类型，而类是"><meta property="og:locale" content="en"><meta property="og:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta property="article:author" content="John Doe"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta name="description" content="简述装箱拆箱 1装箱是指将值类型（int，float等）转换为对象类型object类型的过程，拆箱是将对象类型转换为原始类型的过程，装箱操可以通过赋值操作自动实现，拆箱操作要强制类型转换，如果转换类型和原类型不匹配会抛出类型转异常。  class 和 struct 1234567结构是值类型，而类是"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://jie-space.github.io/2024/08/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"Author: John Doe","link":"Link: ","source":"Source: Hexo","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.","copySuccess":"Copy success, copy and reprint please mark the address of this article"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Hexo',
+  title: 'Hexo',
+  postAI: '',
+  pageFillDescription: '1. 封装（Encapsulation）, 2. 继承（Inheritance）, 3. 多态（Polymorphism）简述装箱拆箱装箱是指将值类型等转换为对象类型类型的过程拆箱是将对象类型转换为原始类型的过程装箱操可以通过赋值操作自动实现拆箱操作要强制类型转换如果转换类型和原类型不匹配会抛出类型转异常和结构是值类型而类是引用类型向方法传递结构时结构是通过传值方式传递的而不是作为引用传递的与类不同结构的实例化可以不使用运算符结构可以声明构造函数但它们必须带参数一个结构不能从另一个结构或类继承而且不能作为一个类的基所有结构都直接继承自后者继承自结构可以实现接口在结构中只能用构造函数来实例化属性不能声明的时候直接赋值类的分类抽象类关键字使用目的若所有子类拥有共同的特性可以把这个特性放到一个抽象类中子类继承此抽象类特点不能被实例化这样会报错抽象成员必须包含在抽象类中抽象类除了抽象成员外还可以包含别的成员不用关键字子类继承抽象父类后必须把父类中的所有抽象成员都重写非抽象成员不必重写除非子类也是个抽象类抽象属性的或方法也得重写抽象成员的访问修饰符不能是抽象类是有构造函数虽然不能被实例化不能用于字段成员可定义成属性用于方法时方法不能定义主体内容抽象类也可以实现接口但要把接口的成员前面标记个密封类关键字使用目的不需要子类来继承他如特点不能被继承如不能被继承子类重写后前面加个那么子类就不能再被继承静态类关键字使用目的不需要实例化可以直接类名引用静态方法比如工具类特点相似于与使用静态成员在整个程序退出时才释放资源所以尽量别写静态字段属性最好是静接口关键字使用目的抽象类所拥有的共性也可以概括为为了多态特点接口中只能包含方法方法属性索引器事件接口中的方法不能有任何实现接口中的成员不能有任何访问修饰符哪怕是接口不能被实例化实现接口的类必须实现接口的所有成员这里跟抽象类一样类不能多继承所以在某些情况下只能用接口来代替接口可以多实现一个类可以继承多个接口而只能继承一个类接口的主要目的就是为了实现多态当一个类同时继承了某个类并且也实现了某些接口的时候必须要将继承的类写在第一个如果一个类同时继承了父类和接口的时候要把父类写在最前面当多个类都具有某个或某几个功能时方法但是这几个类型又不属于相同的系列这几个类型没有共同的父类就不能用抽象类所以这时为了实现多态就可以考虑把这几个类型共有的方法提取到一个接口中让这几个类型分别实现该接口当父类实现接口子类继承父类那么接口就可以引用子类不要在一个接口中写过多的方法避免造成接口污染可编写多个接口在每个接口中分别定义方法实现接口方法的时候不要有关键字直接跟平常定义一样接口方法的显示实现如果多个接口里有相同的方法名那么第一个方法名接口和类的异同接口和类不同点不能直接实例化接口接口不包含方法的实现接口可以多继承类只能单继承类定义可以在不同的源文件之间进行拆分接口和类相同点接口类和结构都可以从多个接口继承接口类似于抽象基类继承接口的任何非抽象类型都必须实现接口的所有成员接口和类都可以包含事件索引器属性接口只能定义方法抽象方法不能被声明为因为抽象方法的主要目的是在派生类中被重写而静态方法属于类本身不能被派生类重写因此抽象方法和静态方法的概念是相互矛盾的构造器是否可以被继承是否可以被在中构造器既不是继承的也不是被重写的这里有几个关键点需要澄清构造器不是继承的当你创建一个派生类子类时它不会自动继承基类的构造器相反每个类都必须有自己的构造器除非它是类型它默认有一个无参数的构造器但不支持继承如果基类有构造器并且你想要在派生类中使用它比如你想要初始化基类的一部分状态你需要在派生类的构造器中使用关键字显式地调用它但是这并不是说派生类继承了基类的构造器而是派生类构造器负责调用基类构造器如果需要的话构造器不能被重写在中关键字用于重写基类中的虚方法抽象方法属性索引器和事件然而构造器不是这些方法属性索引器或事件之一因此它们不能被重写每个类都有自己的一组构造器这些构造器是特定于该类的并且不能通过继承机制来修改或替换构造器的调用链当你创建派生类的一个实例时首先会调用派生类的构造器然后派生类构造器可以使用关键字来调用基类构造器这是可选的但通常是必要的特别是当基类有非默认构造器时这个过程会一直向上追溯到类的继承链的顶部直到最终调用到的构造器这是所有类的最终基类这个调用链确保了基类在派生类之前被正确初始化虚方法和抽象方法的区别一抽象方法仅有声明而没有任何实现如虚方法却不能如此二子类继承父类可以对父类中的虚方法进行重写覆盖不处理三种处理对抽象方法却必须实现子类对父类中虚方法的处理有重写和覆盖请说明它们的区别有父类和子类以及父类的虚方法有如下程序段如果子类是重写父类的则上面的第二行语句将调用子类的该方法如果子类是覆盖父类的则上面的第二行语句将调用父类的该方法简述修饰符的访问权限私有成员在类的内部才可以访问也就是类内部的函数等成员可以访问保护成员该类内部和继承类中可以访问公共成员完全公开没有访问限制当前程序集内可以访问支持多重继承么类之间不支持接口之间支持类对接口叫做实现不叫继承解释什么是构造函数概念构造函数的法名与类型相同没有返回类型作完成对类的对象初始化创建个类的新对象时系统会动调该构造函数初始化新对象如果没有写定义那么系统会动提供个不带任何参数的构造函数简述下向对象的三特性封装封装是指将数据属性和操作数据的代码方法封装在一个对象内部隐藏对象的属性和实现细节仅对外提供公共的访问方式如和方法这样做的目的是提高代码的安全性可维护性和可重用性封装使得对象的设计者与使用者分离使用者只需要通过公共接口与对象交互而不需要知道对象内部的具体实现细节继承继承是一种创建新类的方式新创建的类称为子类或派生类可以继承一个或多个已存在的类称为父类或基类的属性和方法子类可以拥有父类的所有属性和方法除非在子类中进行了重写或隐藏同时子类还可以添加自己特有的属性和方法继承提高了代码的重用性和可扩展性通过继承我们可以方便地创建出具有层次结构的类体系多态多态是指允许不同类的对象对同一消息作出响应即同一操作作用于不同的对象时可以产生不同的结果多态性可以通过方法重写和方法重载来实现方法重写是子类对父类方法的重新实现子类对象调用该方法时将执行子类中的实现版本方法重载是在同一个类中定义多个同名方法但它们的参数列表不同这样可以根据传入参数的不同来调用不同的方法多态性提高了代码的灵活性和可扩展性使得我们可以编写更加通用和可复用的代码构造函数是否能被重写不能可以但可以被重载类的执顺序执顺序类类静态块静态字段静态块静态字段构造器法请说说引和对象对象目前在使用运算符在堆内存中开辟的内存空间称为对象引用引用时一个变量不一定是局部变量还可能是成员变量引用保存了内存地址指向了堆内存当中的对象属性能在接中声明吗可以在接口中声明但不能初始化可以声明属性的方法不能实现接口的好处接是种约束描述类的公共法公共属性不能有任何的实现好处是结构清晰类之间通信简单易懂扩展性好提复性向编程原意是指向抽象协议编程实现者在实现时要严格按协议来办中有没有静态构造函数如果有是做什么的是的中有静态构造函数静态构造函数在类中仅有一个并且不能被直接调用它是在类被加载到公共语言运行时时自动调用的且仅被调用一次以初始化类的静态成员静态构造函数的主要用途包括初始化静态成员静态构造函数是初始化类级别的静态变量或执行仅需运行一次的静态初始化代码的理想位置这些变量或代码在类的任何静态成员被访问之前执行确保了类的静态状态的一致性和正确性执行一次性的类级设置如果你的类需要执行一些一次性的设置或配置比如加载配置文件初始化日志记录器等静态构造函数是一个很好的地方来做这些事情确保线程安全由于静态构造函数在类被加载到时自动调用且只调用一次因此它是执行线程安全的一次性初始化代码的理想选择保证了静态构造函数在多个线程同时尝试首次使用类时只会被一个线程调用能遍历访问的对象需要实现接或声明法的类型自定义可迭代类型实现接口的方法实现非泛型的接口的方法中的析构函数是什么在中析构函数是一个特殊的方法用于在对象被垃圾回收器销毁之前执行清理操作析构函数不能带任何参数也不能被显式调用它是由运行时自动调用的当垃圾回收器确定对象不再被应用程序中的任何部分引用时清理代码解释中什么是命名空间它是强制性的吗在中命名空间是一种封装命名空间成员类型接口委托枚举等的方式它提供了一个逻辑上的分组和层次结构帮助组织代码避免命名冲突以及使得代码更加模块化命名空间的使用是可选的不是强制性的但它是一个被广泛推荐的最佳实践命名空间的定义命名空间通过关键字来定义一个命名空间可以包含多个类接口结构体枚举等并且这些成员可以被嵌套在更深层次的命名空间中以形成命名空间的层次结构虽然命名空间的使用不是强制性的但在实际开发中它几乎总是被使用的不使用命名空间可能会导致以下问题命名冲突如果项目中不使用命名空间那么所有类型的名称都必须全局唯一这在实际项目中几乎是不可能的代码混乱没有命名空间项目中的代码将难以组织和维护特别是在大型项目中可读性降低没有命名空间的结构代码的阅读和理解将变得更加困难阐述什么是关键字我们使用关键字来创建静态类静态方法或静态属性当我们创建一个静态类时该类中只能有静态数据成员和静态方法静态意味着我们不能创建该类的实例该类可以像一样直接使用我们可以在静态类中使用吗不能与静态类一起使用因为我们只能在静态类中使用静态变量和静态方法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-31 15:57:24',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">Hexo</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> Newest Comments</span></div><div class="aside-list"><span>loading...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">August 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">13</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">July 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">No title</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-08-11T11:51:46.854Z" title="Created 2024-08-11 19:51:46">2024-08-11</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-07-31T07:57:24.212Z" title="Updated 2024-07-31 15:57:24">2024-07-31</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://jie-space.github.io/2024/08/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"><header><h1 id="CrawlerTitle" itemprop="name headline">No title</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">John Doe</span><time itemprop="dateCreated datePublished" datetime="2024-08-11T11:51:46.854Z" title="Created 2024-08-11 19:51:46">2024-08-11</time><time itemprop="dateCreated datePublished" datetime="2024-07-31T07:57:24.212Z" title="Updated 2024-07-31 15:57:24">2024-07-31</time></header><p>简述装箱拆箱</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">装箱是指将值类型（int，float等）转换为对象类型object类型的过程，拆箱是将对象类型转换为原始类型的过程，装箱操可以通过赋值操作自动实现，拆箱操作要强制类型转换，如果转换类型和原类型不匹配会抛出类型转异常。</span><br></pre></td></tr></table></figure>
+
+<p>class 和 struct</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">结构是值类型，而类是引用类型。</span><br><span class="line">向方法传递结构时，结构是通过传值方式传递的，而不是作为引用传递的。</span><br><span class="line">与类不同，结构的实例化可以不使用 new 运算符。</span><br><span class="line">结构可以声明构造函数，但它们必须带参数。</span><br><span class="line">一个结构不能从另一个结构或类继承，而且不能作为一个类的基。所有结构都直接继承自 System.ValueType，后者继承自 System.Object。</span><br><span class="line">结构可以实现接口。</span><br><span class="line">在结构中只能用构造函数来实例化属性，不能声明的时候直接赋值</span><br></pre></td></tr></table></figure>
+
+<p>类的分类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">1.1 抽象类</span><br><span class="line">关键字： abstract</span><br><span class="line">使用目的：若所有子类拥有共同的特性，可以把这个特性放到一个抽象类中，子类继承此抽象类。</span><br><span class="line">特点：</span><br><span class="line">1.不能被实例化；ClassName en=new ClassName();</span><br><span class="line">//这样会报错。</span><br><span class="line">2.抽象成员必须包含在抽象类中。</span><br><span class="line">3.抽象类除了抽象成员外，还可以包含别的成员(不用关键字 abstract)。</span><br><span class="line">4.子类继承抽象父类后，必须把父类中的所有抽象成员都重写(非抽象成员不必重写)。除非子类也是个抽象类，抽象属性的get或set方法也得重写。</span><br><span class="line">5.抽象成员的访问修饰符不能是private。</span><br><span class="line">6.抽象类是有构造函数，虽然不能被实例化。</span><br><span class="line">7.abstract不能用于字段成员，可定义成属性。</span><br><span class="line">8.abstract用于方法时，方法不能定义主体(内容)。</span><br><span class="line">9.抽象类也可以实现接口，但要把接口的成员前面标记个abstract。</span><br><span class="line"></span><br><span class="line">1.2 密封类</span><br><span class="line">关键字：sealed</span><br><span class="line">使用目的：不需要子类来继承他。如 String；</span><br><span class="line">特点：</span><br><span class="line">1.不能被继承，如:string ,不能被继承。</span><br><span class="line">2.子类重写后，前面加个sealed，那么子类就不能再被继承。</span><br><span class="line"></span><br><span class="line">1.3 静态类</span><br><span class="line">关键字： static</span><br><span class="line">使用目的：不需要实例化，可以直接类名引用静态方法。比如 工具类。</span><br><span class="line">特点：</span><br><span class="line">1.相似于sealed与abstract使用。</span><br><span class="line">2.静态成员在整个程序退出时才释放资源，所以尽量别写静态字段、属性。最好是静</span><br><span class="line"></span><br><span class="line">2. 接口</span><br><span class="line">   关键字：interface</span><br><span class="line">   使用目的：抽象类所拥有的共性，也可以概括为：为了多态。</span><br><span class="line">   特点：</span><br><span class="line">   1.接口中只能包含方法。（方法、属性、索引器、事件）</span><br><span class="line">   2.接口中的方法不能有任何实现</span><br><span class="line">   3.接口中的成员不能有任何访问修饰符（哪怕是public）</span><br><span class="line">   4.接口不能被实例化</span><br><span class="line">   5.实现接口的类，必须实现接口的所有成员(这里跟抽象类一样)</span><br><span class="line">   6.类不能多继承，所以在某些情况下，只能用接口来代替。接口可以多实现（一个类可以继承多个接口，而只能继承一个类）</span><br><span class="line">   7.接口的主要目的就是为了实现多态</span><br><span class="line">   8.当一个类，同时继承了某个类，并且也实现了某些接口的时候，必须要将继承的类写在第一个(如果一个类同时继承了父类和接口的时候，要把父类写在最前面)</span><br><span class="line">   9.当多个类，都具有某个或某几个功能时（方法），但是这几个类型又不属于相同的系列（这几个类型没有共同的父类，就不能用抽象类。），所以这时，为了实现多态就可以考虑把这几个类型共有的方法提取到一个接口中，让这几个类型分别实现该接口</span><br><span class="line">   10.当父类实现接口，子类继承父类。那么 接口就可以引用子类</span><br><span class="line">   11.不要在一个接口中写过多的方法，避免造成接口污染。可编写多个接口，在每个接口中，分别定义方法</span><br><span class="line">   12.实现接口方法的时候，不要有override关键字，直接跟平常定义一样</span><br><span class="line">   13.接口方法的显示实现，如果多个接口里有相同的方法名。那么第一个方法名</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>  接口和类的异同</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  接口和类不同点：</span><br><span class="line">     不能直接实例化接口。</span><br><span class="line">      接口不包含方法的实现。</span><br><span class="line">      接口可以多继承，类只能单继承。</span><br><span class="line">      类定义可以在不同的源文件之间进行拆分。</span><br><span class="line">    </span><br><span class="line">      接口和类相同点：</span><br><span class="line">      接口、类和结构都可以从多个接口继承。</span><br><span class="line">      接口类似于抽象基类：继承接口的任何非抽象类型都必须实现接口的所有成员。</span><br><span class="line">      接口和类都可以包含事件、索引器、属性。</span><br><span class="line">      接口只能定义方法。 </span><br><span class="line"></span><br><span class="line">抽象方法不能被声明为`static`。因为抽象方法的主要目的是在派生类中被重写（override）。而静态方法属于类本身，不能被派生类重写。因此，抽象方法和静态方法的概念是相互矛盾的。</span><br></pre></td></tr></table></figure>
+
+<p>C#构造器Constructor是否可以被继承?是否可以被Override?</p>
+<ol>
+<li><pre><code>在C#中，构造器（Constructor）既不是继承的也不是被重写的（Override）。这里有几个关键点需要澄清：
+
+1. **构造器不是继承的**：当你创建一个派生类（子类）时，它不会自动继承基类的构造器。相反，每个类都必须有自己的构造器（除非它是`struct`类型，它默认有一个无参数的构造器，但`struct`不支持继承）。如果基类有构造器，并且你想要在派生类中使用它（比如，你想要初始化基类的一部分状态），你需要在派生类的构造器中使用`base`关键字显式地调用它。但是，这并不是说派生类“继承”了基类的构造器，而是派生类构造器负责调用基类构造器（如果需要的话）。
+2. **构造器不能被重写**：在C#中，`override`关键字用于重写基类中的虚方法（virtual methods）、抽象方法（abstract methods）、属性（properties）、索引器（indexers）和事件（events）。然而，构造器不是这些方法、属性、索引器或事件之一，因此它们不能被重写。每个类都有自己的一组构造器，这些构造器是特定于该类的，并且不能通过继承机制来修改或替换。
+3. **构造器的调用链**：当你创建派生类的一个实例时，首先会调用派生类的构造器。然后，派生类构造器可以使用`base`关键字来调用基类构造器（这是可选的，但通常是必要的，特别是当基类有非默认构造器时）。这个过程会一直向上追溯到类的继承链的顶部，直到最终调用到`System.Object`的构造器（这是所有C#类的最终基类）。这个调用链确保了基类在派生类之前被正确初始化。
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">C#虚方法（virtual ）和抽象方法（abstract）的区别？</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ol>
+<p>  一：抽象方法仅有声明，而没有任何实现，如abstract someMethod();，虚方法却不能如此<br>二：子类继承父类，可以对父类中的虚方法进行重写、覆盖、不处理三种处理对抽象方法却必须实现</p>
+<p>子类对父类中虚方法的处理有重写（override）和覆盖（new），请说明它们的区别？<br>有父类ParentClass和子类ChildClass、以及父类的虚方法VirtualMethod。有如下程序段：<br>ParentClass pc &#x3D; new ChildClass();<br>pc.VirtualMethod(…);<br>如果子类是重写（override）父类的VirtualMethod，则上面的第二行语句将调用子类的该方法<br>如果子类是覆盖（new）父类的VirtualMethod，则上面的第二行语句将调用父类的该方法 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">简述 private、 protected、 public、 internal 修饰符的访问权限 ？</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>private : 私有成员, 在类的内部才可以访问 ，也就是类内部的函数等成员可以访问。<br>protected : 保护成员，该类内部和继承类中可以访问。<br>public : 公共成员，完全公开，没有访问限制。<br>internal: 当前程序集内可以访问</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">C#支持多重继承么？</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>类之间不支持，接口之间支持。类对接口叫做实现，不叫继承</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">c#解释什么是构造函数？</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>概念：构造函数的⽅法名与类型相同、没有返回类型<br>作⽤：完成对类的对象初始化创建⼀个类的新对象时，系统会⾃动调⽤该构造函数初始化新对象， 如果没有写定义，那么系统会⾃动提供⼀个不带任何参数的public 构造函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">简述⼀下⾯向对象的三⼤特性？</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="1-封装（Encapsulation）"><a href="#1-封装（Encapsulation）" class="headerlink" title="1. 封装（Encapsulation）"></a>1. 封装（Encapsulation）</h3><p>封装是指将数据（属性）和操作数据的代码（方法）封装在一个对象内部，隐藏对象的属性和实现细节，仅对外提供公共的访问方式（如getter和setter方法）。这样做的目的是提高代码的安全性、可维护性和可重用性。封装使得对象的设计者与使用者分离，使用者只需要通过公共接口与对象交互，而不需要知道对象内部的具体实现细节。</p>
+<h3 id="2-继承（Inheritance）"><a href="#2-继承（Inheritance）" class="headerlink" title="2. 继承（Inheritance）"></a>2. 继承（Inheritance）</h3><p>继承是一种创建新类的方式，新创建的类（称为子类或派生类）可以继承一个或多个已存在的类（称为父类或基类）的属性和方法。子类可以拥有父类的所有属性和方法（除非在子类中进行了重写或隐藏），同时子类还可以添加自己特有的属性和方法。继承提高了代码的重用性和可扩展性，通过继承，我们可以方便地创建出具有层次结构的类体系。</p>
+<h3 id="3-多态（Polymorphism）"><a href="#3-多态（Polymorphism）" class="headerlink" title="3. 多态（Polymorphism）"></a>3. 多态（Polymorphism）</h3><p>多态是指允许不同类的对象对同一消息作出响应，即同一操作作用于不同的对象时，可以产生不同的结果。多态性可以通过方法重写（Override）和方法重载（Overload）来实现。方法重写是子类对父类方法的重新实现，子类对象调用该方法时将执行子类中的实现版本。方法重载是在同一个类中定义多个同名方法，但它们的参数列表不同，这样可以根据传入参数的不同来调用不同的方法。多态性提高了代码的灵活性和可扩展性，使得我们可以编写更加通用和可复用的代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">构造函数是否能被重写？</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>不能可以但可以被重载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">C# 类的执⾏顺序？</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>执⾏顺序：⽗类，⼦类，静态块，静态字段，⾮静态块，⾮静态字段，构造器，⽅法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">请说说C#引⽤和对象?</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>1.对象：目前在使用new运算符在堆内存中开辟的内存空间称为对象。<br>2.引用：引用时一个变量，不一定是局部变量，还可能是成员变量。引用保存了内存地址，指向了堆内存当中的对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">C#属性能在接⼝中声明吗？</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>可以在接口中声明但不能初始化，可以声明属性的get，set方法，不能实现。</p>
+<p>接口的好处</p>
+<p>接⼝是⼀种约束，描述类的公共⽅法&#x2F;公共属性，不能有任何的实现<br>好处是：结构清晰，类之间通信简单易懂，扩展性好，提⾼复⽤性。<br>⾯向interface编程，原意是指⾯向抽象协议编程，实现者在实现时要严格按协议来办</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">C#中有没有静态构造函数，如果有是做什么⽤的？</span><br><span class="line"></span><br><span class="line">1. ```</span><br><span class="line">   1. 是的，C# 中有静态构造函数（Static Constructors）。静态构造函数在类中仅有一个，并且不能被直接调用。它是在类被加载到 CLR（公共语言运行时）时自动调用的，且仅被调用一次，以初始化类的静态成员。</span><br><span class="line">   </span><br><span class="line">      静态构造函数的主要用途包括：</span><br><span class="line">   </span><br><span class="line">      1. **初始化静态成员**：静态构造函数是初始化类级别的静态变量或执行仅需运行一次的静态初始化代码的理想位置。这些变量或代码在类的任何静态成员被访问之前执行，确保了类的静态状态的一致性和正确性。</span><br><span class="line">      2. **执行一次性的类级设置**：如果你的类需要执行一些一次性的设置或配置，比如加载配置文件、初始化日志记录器等，静态构造函数是一个很好的地方来做这些事情。</span><br><span class="line">      3. **确保线程安全**：由于静态构造函数在类被加载到CLR时自动调用，且只调用一次，因此它是执行线程安全的一次性初始化代码的理想选择。CLR保证了静态构造函数在多个线程同时尝试首次使用类时，只会被一个线程调用。</span><br><span class="line">   </span><br><span class="line">      C#能⽤foreach遍历访问的对象需要实现 接⼝或声明⽅法的类型？（c#自定义可迭代类型）</span><br><span class="line">   </span><br><span class="line">   ​    实现IEnumerable&lt;T&gt;接口的GetEnumerator方法  </span><br><span class="line">   ​    </span><br><span class="line">   ​     实现非泛型的IEnumerable接口的GetEnumerator方法  </span><br></pre></td></tr></table></figure>
+<p>C#中的析构函数是什么？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">在C#中，析构函数（Destructor）是一个特殊的方法，用于在对象被垃圾回收器（Garbage Collector, GC）销毁之前执行清理操作。析构函数不能带任何参数，也不能被显式调用；它是由.NET运行时自动调用的，当垃圾回收器确定对象不再被应用程序中的任何部分引用时。</span><br><span class="line">class MyClass  </span><br><span class="line">&#123;  </span><br><span class="line">    ~MyClass()  </span><br><span class="line">    &#123;  </span><br><span class="line">        // 清理代码  </span><br><span class="line">        Console.WriteLine(&quot;MyClass destructor called.&quot;);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>解释C#中什么是命名空间，它是强制性的吗？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">在C#中，命名空间（Namespace）是一种封装命名空间成员（类型、接口、委托、枚举等）的方式，它提供了一个逻辑上的分组和层次结构，帮助组织代码，避免命名冲突，以及使得代码更加模块化。命名空间的使用是可选的，不是强制性的，但它是一个被广泛推荐的最佳实践。</span><br><span class="line"></span><br><span class="line">### 命名空间的定义</span><br><span class="line"></span><br><span class="line">命名空间通过`namespace`关键字来定义。一个命名空间可以包含多个类、接口、结构体、枚举等，并且这些成员可以被嵌套在更深层次的命名空间中，以形成命名空间的层次结构。</span><br><span class="line">虽然命名空间的使用不是强制性的，但在实际开发中，它几乎总是被使用的。不使用命名空间可能会导致以下问题：</span><br><span class="line"></span><br><span class="line">命名冲突：如果项目中不使用命名空间，那么所有类型的名称都必须全局唯一，这在实际项目中几乎是不可能的。</span><br><span class="line">代码混乱：没有命名空间，项目中的代码将难以组织和维护，特别是在大型项目中。</span><br><span class="line">可读性降低：没有命名空间的结构，代码的阅读和理解将变得更加困难。</span><br></pre></td></tr></table></figure>
+
+
+<p>阐述什么是C# static关键字？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">我们使用 static 关键字来创建静态类、静态方法或静态属性。当我们创建一个静态类时，该类中只能有静态数据成员和静态方法。静态意味着我们不能创建该类的实例。该类可以像 ClassName.methodName 一样直接使用。</span><br><span class="line"></span><br><span class="line"> 我们可以在C#静态类中使用“this”吗 ？</span><br><span class="line"></span><br><span class="line">“this”不能与静态类一起使用，因为我们只能在静态类中使用静态变量和静态方法</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">John Doe</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://jie-space.github.io/2024/08/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://jie-space.github.io/2024/08/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/')">Hexo</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://jie-space.github.io/2024/08/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Hexo&amp;url=http://jie-space.github.io/2024/08/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/08/11/%E4%BE%8B%E9%A2%98/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2024/08/11/%E6%9E%9A%E4%B8%BE/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">哈哈哈哈哈哈</div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B0%81%E8%A3%85%EF%BC%88Encapsulation%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">1. 封装（Encapsulation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BB%A7%E6%89%BF%EF%BC%88Inheritance%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">2. 继承（Inheritance）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A4%9A%E6%80%81%EF%BC%88Polymorphism%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">3. 多态（Polymorphism）</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C(IO)/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E7%89%B9%E6%80%A7/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.870Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/11/%E6%9E%9A%E4%B8%BE/" title="No title">No title</a><time datetime="2024-08-11T11:51:46.854Z" title="Created 2024-08-11 19:51:46">2024-08-11</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="John Doe" target="_blank">John Doe</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">Articles</div><div class="length-num">17</div></a><a href="/tags/" title="tag"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/" title="category"><div class="headline">Categories</div><div class="length-num">0</div></a></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="Display Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>Display Mode</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 John Doe 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
